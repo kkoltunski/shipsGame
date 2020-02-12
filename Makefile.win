@@ -1,0 +1,46 @@
+# Project: Ships
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Tfield.o Tboard.o Taircraft_carrier.o Tairport.o Tfleet.o Tship.o
+LINKOBJ  = main.o Tfield.o Tboard.o Taircraft_carrier.o Tairport.o Tfleet.o Tship.o
+LIBS     = -L"C:/Users/kkoltunski/Desktop/Klaudiusz Ko速u雟ki/NAUKA/C++/MinGW64/lib" -L"C:/Users/kkoltunski/Desktop/Klaudiusz Ko速u雟ki/NAUKA/C++/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Users/kkoltunski/Desktop/Klaudiusz Ko速u雟ki/NAUKA/C++/MinGW64/include" -I"C:/Users/kkoltunski/Desktop/Klaudiusz Ko速u雟ki/NAUKA/C++/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/kkoltunski/Desktop/Klaudiusz Ko速u雟ki/NAUKA/C++/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Users/kkoltunski/Desktop/Klaudiusz Ko速u雟ki/NAUKA/C++/MinGW64/include" -I"C:/Users/kkoltunski/Desktop/Klaudiusz Ko速u雟ki/NAUKA/C++/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/kkoltunski/Desktop/Klaudiusz Ko速u雟ki/NAUKA/C++/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Users/kkoltunski/Desktop/Klaudiusz Ko速u雟ki/NAUKA/C++/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Ships.exe
+CXXFLAGS = $(CXXINCS) -std=gnu++11
+CFLAGS   = $(INCS) -std=gnu++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Tfield.o: Tfield.cpp
+	$(CPP) -c Tfield.cpp -o Tfield.o $(CXXFLAGS)
+
+Tboard.o: Tboard.cpp
+	$(CPP) -c Tboard.cpp -o Tboard.o $(CXXFLAGS)
+
+Taircraft_carrier.o: Taircraft_carrier.cpp
+	$(CPP) -c Taircraft_carrier.cpp -o Taircraft_carrier.o $(CXXFLAGS)
+
+Tairport.o: Tairport.cpp
+	$(CPP) -c Tairport.cpp -o Tairport.o $(CXXFLAGS)
+
+Tfleet.o: Tfleet.cpp
+	$(CPP) -c Tfleet.cpp -o Tfleet.o $(CXXFLAGS)
+
+Tship.o: Tship.cpp
+	$(CPP) -c Tship.cpp -o Tship.o $(CXXFLAGS)

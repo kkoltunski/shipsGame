@@ -4,3 +4,9 @@
 *.win
 *.layout
 *.dev
+
+#VisualStudio files#
+####################
+Debug
+*.filters
+*.user

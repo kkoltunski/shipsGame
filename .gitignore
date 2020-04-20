@@ -1,0 +1,6 @@
+#Dev-C++ files#
+###############
+*.o
+*.win
+*.layout
+*.dev

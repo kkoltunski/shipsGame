@@ -19,4 +19,3 @@ Tship::Tship(Tfield *_pos, int _type, bool _dir){
 		}
 	}
 }
-

@@ -19,7 +19,8 @@ class Tship
 	
 	public:
 		Tship(Tfield *_pos, int _name, bool _dir = false);	
-	
+		virtual ~Tship() = default;
+
 	friend class Tboard;														//Necessary for Tboard destructor
 };
 

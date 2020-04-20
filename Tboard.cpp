@@ -1,6 +1,7 @@
 #include "Tboard.h"
 #include "settings.h"
 #include <iostream>
+#include <iomanip>
 #include <algorithm>
 
 using std::cout;
@@ -58,8 +59,8 @@ Tboard::Tboard(const Tboard &In1){												//This constructor is not necessar
 }
 
 Tboard::~Tboard(){																//First dealocate memory allocated for ships, then dealocate memory allocated for fields (fields keeps info about ships)												
-																				//Release allocated memory for each created ships on board (or better prepare function which call specified destructor?)
-	std::for_each(Ships.begin(), Ships.end(), [](const Tship *pToShip){(pToShip->Begining->Typ < MaxType ? delete pToShip : delete static_cast<const Taircraft_carrier*>(pToShip));});
+																				//Release allocated memory for each created ships on board (14.02.2020 - polimorphism updated for Tship destructor)
+	std::for_each(Ships.begin(), Ships.end(), [](const Tship *pToShip){delete pToShip;});
 	delete [] Area;																//Board of addresses to fields - destruction
 }
 
@@ -91,14 +92,14 @@ void Tboard::DrawBoard(){														//Function for board overwiev
 		Row += temp;
 	}
 	cout << Row + "\n";
+	Row.clear();
 	
-	for(int x = 0; x < BoardRows; x++){	
-		Row = std::to_string(x+1);												//Rows of board preparation
+	for(int x = 0; x < BoardRows; x++){		
+		cout << std::setw(3) << std::left << (x+1);								//20.02.2020 adjusting first part of row (row number max 99)
 		for(int y = 0; y < BoardColumns; y++){		
-			if((y == 0) && (x < 9)) Row += "  [";								//1-9 rows have double spaces for make table look organized
-			else Row += " [";													//+10th row has one space bc 10 = '1''0' (2digits) - if someone set +99rows then table will look bad
-			if(Net[x][y]->Occupied) Row += "X] ";								//checking info of current field
-			else Row += " ] ";
+			Row += "[";															
+			if(Net[x][y]->Occupied) Row += "X]  ";								//checking info of current field
+			else Row += " ]  ";
 		}
 		cout << Row + "\n\n";
 		Row.clear();															//if all columns are ready clear this string and start again for next row
@@ -168,10 +169,9 @@ int Tboard::ShipSelector(const UserData &UI, int Selector){
 }
 
 bool Tboard::CreateShip(const Tfield *_pos, int Type, bool _dir){
-	if(Type){
-		cout << "selected Type = " << Type << endl;
-		if(Type < MaxType)	Ships.push_back(static_cast<Tship*>(new Tship (const_cast<Tfield*>(_pos), Type, _dir)));
-		else	Ships.push_back(static_cast<Tship*>(new Taircraft_carrier (const_cast<Tfield*>(_pos), Type, _dir))); //Polimorphism is not possible for Taircraft_carrier type when address will be retrieved (?)
+	if(Type){																					//14.02.2020 Static_cast's for Ships.push_back() are not necessary
+		if(Type < MaxType)	Ships.push_back(new Tship (const_cast<Tfield*>(_pos), Type, _dir));
+		else	Ships.push_back(new Taircraft_carrier (const_cast<Tfield*>(_pos), Type, _dir));
 		return 1;
 	}
 	else{

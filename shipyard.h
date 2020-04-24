@@ -1,3 +1,11 @@
+/*****************************************************************//**
+ * \file   shipyard.h
+ * \brief  Polimorphic alternative for switch..case instruction used in ship placement process
+ * 
+ * \author kkoltunski
+ * \date   April 2020
+***********************************************************************/
+
 #ifndef TSHIP_H
 #define TSHIP_H
 
@@ -9,77 +17,89 @@
 using std::string;
 using std::cout;
 
+/**
+ * Polimorphic alternative for switch..case instruction used in ship placement process
+ */
 class ship
 {
-protected:
-	virtual void allocator();
-
-	field* initialFieldAddress;
-	bool placementDirection;						//Direction: 0 = horizontal, 1 = vertical;
-	shipType type;
+private:
 	int multiplier;
 
-public:
-	ship( field* _pos, bool _dir, shipType _type) : initialFieldAddress{ _pos }, placementDirection{ _dir }, type{ _type }{
-		multiplier = (_dir ? boardColumns : 1);
-	}
-	virtual ~ship() = default;
+protected:
+	///Method to allocate ship at correct field.
+	virtual void allocator();
 
-//	friend class board;								//Necessary for Tboard destructor
+	///Field address where ship begining.
+	field* initialFieldAddress;
+	///Information in which direction ship is placed (0 - horizontal, 1 - vertical).
+	bool placementDirection;
+	///Ship type.
+	shipType type;
+
+public:
+	///Constructor.
+	ship(field* _pos, bool _dir, shipType _type);
+	///Destructor.
+	virtual ~ship() = default;
 };
 
 class scout : public ship
 {
 public:
-	scout(field* _initialFieldAddress, bool _shipDirection, shipType _type) : ship(_initialFieldAddress, _shipDirection, _type){
-		allocator();
-	}
+	///Constructor.
+	scout(field* _initialFieldAddress, bool _shipDirection, shipType _type);
+	///Destructor.
 	virtual ~scout() override = default;
 
+	///Ship and interface communication.
 	friend class iShip;
 };
 
 class u_bot : public ship
 {
 public:
-	u_bot(field* _initialFieldAddress, bool _shipDirection, shipType _type) : ship(_initialFieldAddress, _shipDirection, _type) {
-		allocator();
-	}
+	///Constructor.
+	u_bot(field* _initialFieldAddress, bool _shipDirection, shipType _type);
+	///Destructor.
 	virtual ~u_bot() override = default;
 
+	///Ship and interface communication.
 	friend class iShip;
 };
 
 class hybrid : public ship
 {
 public:
-	hybrid(field* _initialFieldAddress, bool _shipDirection, shipType _type) : ship(_initialFieldAddress, _shipDirection, _type) {
-		allocator();
-	}
+	///Constructor.
+	hybrid(field* _initialFieldAddress, bool _shipDirection, shipType _type);
+	///Destructor.
 	virtual ~hybrid() override = default;
 
+	///Ship and interface communication.
 	friend class iShip;
 };
 
 class destroyer : public ship
 {
 public:
-	destroyer(field* _initialFieldAddress, bool _shipDirection, shipType _type) : ship(_initialFieldAddress, _shipDirection, _type) {
-		allocator();
-	}
+	///Constructor.
+	destroyer(field* _initialFieldAddress, bool _shipDirection, shipType _type);
+	///Destructor.
 	virtual ~destroyer() override = default;
 
+	///Ship and interface communication.
 	friend class iShip;
 };
 
 class aircraft_carrier : public ship
 {
 public:
-	aircraft_carrier(field* _initialFieldAddress, bool _shipDirection, shipType _type) : ship(_initialFieldAddress, _shipDirection, _type) {
-		allocator();
-	}
+	///Constructor.
+	aircraft_carrier(field* _initialFieldAddress, bool _shipDirection, shipType _type);
+	///Destructor.
 	virtual ~aircraft_carrier() override = default;
 
+	///Ship and interface communication.
 	friend class iShip;
 };
 #endif

@@ -1,0 +1,74 @@
+\hypertarget{classfleet}{}\doxysection{fleet Class Reference}
+\label{classfleet}\index{fleet@{fleet}}
+
+
+{\ttfamily \#include $<$fleet.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfleet_a04ca276f1250023c77bfa62c42aac066}{fleet}} (int \+\_\+points, string \&\&\+\_\+name=\char`\"{}Player\char`\"{}+std\+::to\+\_\+string(player\+Number++))
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfleet}{fleet}} \& \mbox{\hyperlink{classfleet_ab42a36b6f481b2ba104bf71897d2acf8}{operator=}} (const \mbox{\hyperlink{classfleet}{fleet}} \&In1)
+\begin{DoxyCompactList}\small\item\em Copy operator (training purposes). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classfleet_ad0b81a41ae630be61b235316b6adb89b}\label{classfleet_ad0b81a41ae630be61b235316b6adb89b}} 
+class \mbox{\hyperlink{classfleet_ad0b81a41ae630be61b235316b6adb89b}{i\+Player}}
+\begin{DoxyCompactList}\small\item\em Player and interface communication. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classfleet_aa0e4b2260d283199426d1f9706ff421d}\label{classfleet_aa0e4b2260d283199426d1f9706ff421d}} 
+class \mbox{\hyperlink{classfleet_aa0e4b2260d283199426d1f9706ff421d}{user\+Data\+Interface}}
+\begin{DoxyCompactList}\small\item\em Main interface communication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fleet is class representing single player. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfleet_a04ca276f1250023c77bfa62c42aac066}\label{classfleet_a04ca276f1250023c77bfa62c42aac066}} 
+\index{fleet@{fleet}!fleet@{fleet}}
+\index{fleet@{fleet}!fleet@{fleet}}
+\doxysubsubsection{\texorpdfstring{fleet()}{fleet()}}
+{\footnotesize\ttfamily fleet\+::fleet (\begin{DoxyParamCaption}\item[{int}]{\+\_\+points,  }\item[{string \&\&}]{\+\_\+name = {\ttfamily \char`\"{}Player\char`\"{}~+~std\+:\+:to\+\_\+string(playerNumber++)} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Assigning points and name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+points} & \mbox{[}in\mbox{]} Should be used global variable \mbox{\hyperlink{settings_8h_ac66ae599cbe4f255ae3fbd4d64ae5d11}{fleet\+Points}}. \\
+\hline
+{\em \+\_\+name} & \mbox{[}in\mbox{]} Alleged parameter is \char`\"{}\+Player X\char`\"{}. In the future there will be possibilities to define your own name. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfleet_ab42a36b6f481b2ba104bf71897d2acf8}\label{classfleet_ab42a36b6f481b2ba104bf71897d2acf8}} 
+\index{fleet@{fleet}!operator=@{operator=}}
+\index{operator=@{operator=}!fleet@{fleet}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfleet}{fleet}} \& fleet\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfleet}{fleet}} \&}]{orginal\+Fleet }\end{DoxyParamCaption})}
+
+
+
+Copy operator (training purposes). 
+
+Principle of operation is similar to copy \char`\"{}byte by byte\char`\"{} but player number is increased. 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}in\mbox{[}} & orginal\+Fleet Reference to original fleet. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Address to copy. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fleet_8h}{fleet.\+h}}\item 
+fleet.\+cpp\end{DoxyCompactItemize}

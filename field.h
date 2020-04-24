@@ -1,11 +1,20 @@
+/*****************************************************************//**
+ * \file   field.h
+ * \brief  Single field representation class in whole board
+ * 
+ * \author kkoltunski
+ * \date   April 2020
+***********************************************************************/
+
 #ifndef FIELD_H
 #define FIELD_H
 
-/*This class is used as single field in whole board*/
 #include <iostream>
 
 class ship;
-
+/**
+ * Field is class representing part of board.
+ */
 class field
 {
 private:
@@ -15,17 +24,30 @@ private:
 
 	field(bool _ocupation = false)	: occupiedByShip(_ocupation), pToShip{nullptr}{
 	}
-	field& operator=(field& _in);
+	virtual ~field();
 
-	friend class iBoardField;
+public:
+	///Copy operator.
+	field& operator=(field& _originalField);
+
+	///User and board communication interface.
+	friend class iBoard;
+	///Board is making changes in fields.
 	friend class board;
+	///Ship function modyfing field states.
 	friend class ship;
+	///Ship function modyfing field states.
 	friend class scout;
+	///Ship function modyfing field states.
 	friend class u_bot;
+	///Ship function modyfing field states.
 	friend class hybrid;
+	///Ship function modyfing field states.
 	friend class destroyer;
+	///Ship function modyfing field states.
 	friend class aircraft_carrier;
-	friend std::ostream& operator<<(std::ostream& In1, field &In2);
+	///External << operator to make possible showing field information.
+	friend std::ostream& operator<<(std::ostream& _inStream, field & _inField);
 };
 
 #endif

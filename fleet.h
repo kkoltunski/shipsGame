@@ -1,15 +1,24 @@
+/*****************************************************************//**
+ * \file   fleet.h
+ * \brief  Player representation class
+ * 
+ * \author kkoltunski
+ * \date   April 2020
+***********************************************************************/
+
 #ifndef TFLEET_H
 #define TFLEET_H
 
-/*This class is used as player data*/
 #include <iostream>
-#include "settings.h"
 #include "userDataInterface.h"
 
 using std::string;
 using std::cout;
 using std::endl;
 
+/**
+ * Fleet is class representing single player.
+ */
 class fleet
 {
 private:
@@ -18,13 +27,15 @@ private:
 	string ID;
 		
 public:
-	fleet(int _points, string &&_name = "Player" + std::to_string(playerNumber++)) : points(_points), ID(_name)
-	{
-	}
-	
+	///Constructor.
+	fleet(int _points, string&& _name = "Player" + std::to_string(playerNumber++));
+
+	///Copy operator (training purposes).
 	fleet& operator=(const fleet& In1);
 
+	///Player and interface communication.
 	friend class iPlayer;
+	///Main interface communication
 	friend class userDataInterface;
 };
 

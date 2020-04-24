@@ -6,3 +6,7 @@
 -completely rebuilded software (after i learned full c++ possibilities i decide to refactore this software)
 -there is a bug in file userDataInterface.cpp - line 143 do...while loop - user is asked about ship type two times
 i dont know why but in Dev-C++ it worked as i except and maybe it is VisualStudio compiler bug?
+
+2020.04.24
+-Comments update for doxygen
+-Folder "Doxygen" include documentation

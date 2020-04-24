@@ -1,0 +1,112 @@
+\hypertarget{structi_ship}{}\doxysection{i\+Ship Struct Reference}
+\label{structi_ship}\index{iShip@{iShip}}
+
+
+{\ttfamily \#include $<$user\+Data\+Interface.\+h$>$}
+
+
+
+Inheritance diagram for i\+Ship\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=137pt]{structi_ship__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for i\+Ship\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=137pt]{structi_ship__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structi_ship_a7997066c9b74f55f54ee703a4816df74}\label{structi_ship_a7997066c9b74f55f54ee703a4816df74}} 
+short \mbox{\hyperlink{structi_ship_a7997066c9b74f55f54ee703a4816df74}{return\+Possible\+Ships}} () noexcept(true)
+\begin{DoxyCompactList}\small\item\em Return possible ships value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structi_ship_ae28b4ddd6944d092032db2338571b7a3}\label{structi_ship_ae28b4ddd6944d092032db2338571b7a3}} 
+short \mbox{\hyperlink{structi_ship_ae28b4ddd6944d092032db2338571b7a3}{return\+Choosen\+Ship\+Type}} () noexcept(true)
+\begin{DoxyCompactList}\small\item\em Return choosen ship type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structi_ship_abf025bf0ca7a422c485c0569406ac257}{calculate\+Possible\+Ships}} (bool, const \mbox{\hyperlink{structi_board}{i\+Board}} \&, const \mbox{\hyperlink{structi_player}{i\+Player}} \&) noexcept(true)
+\begin{DoxyCompactList}\small\item\em Possible ship calculation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structi_ship_aeed0142c9fb2b9a01c4cf52fe0a44cc9}{get\+User\+Typed\+Ship}} () noexcept(true)
+\begin{DoxyCompactList}\small\item\em Type ship request. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classship}{ship}} $\ast$ \mbox{\hyperlink{structi_ship_a9305db198c9d96ed3540f86764730543}{shipyard}} (const \mbox{\hyperlink{structi_board}{i\+Board}} \&\+\_\+board\+Interface) noexcept(true)
+\begin{DoxyCompactList}\small\item\em Ship factory. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structi_ship_a7f2ec75337d01f89bfb0a9c918bb45eb}\label{structi_ship_a7f2ec75337d01f89bfb0a9c918bb45eb}} 
+virtual void \mbox{\hyperlink{structi_ship_a7f2ec75337d01f89bfb0a9c918bb45eb}{initialize}} () noexcept(true) override
+\begin{DoxyCompactList}\small\item\em Method to initialize interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Partial interface of main interface. Is used to manage ship placement process. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structi_ship_abf025bf0ca7a422c485c0569406ac257}\label{structi_ship_abf025bf0ca7a422c485c0569406ac257}} 
+\index{iShip@{iShip}!calculatePossibleShips@{calculatePossibleShips}}
+\index{calculatePossibleShips@{calculatePossibleShips}!iShip@{iShip}}
+\doxysubsubsection{\texorpdfstring{calculatePossibleShips()}{calculatePossibleShips()}}
+{\footnotesize\ttfamily void i\+Ship\+::calculate\+Possible\+Ships (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+direction,  }\item[{const \mbox{\hyperlink{structi_board}{i\+Board}} \&}]{\+\_\+board\+Interface,  }\item[{const \mbox{\hyperlink{structi_player}{i\+Player}} \&}]{\+\_\+player\+Interface }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Possible ship calculation. 
+
+Main method to manage possible ships calculation depend on placement direction and player possible points. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+direction} & Ship placement direction. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+board\+Interface} & Reference to \mbox{\hyperlink{structi_board}{i\+Board}} interface. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+player\+Interface} & Reference to \mbox{\hyperlink{structi_player}{i\+Player}} interface. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structi_ship_aeed0142c9fb2b9a01c4cf52fe0a44cc9}\label{structi_ship_aeed0142c9fb2b9a01c4cf52fe0a44cc9}} 
+\index{iShip@{iShip}!getUserTypedShip@{getUserTypedShip}}
+\index{getUserTypedShip@{getUserTypedShip}!iShip@{iShip}}
+\doxysubsubsection{\texorpdfstring{getUserTypedShip()}{getUserTypedShip()}}
+{\footnotesize\ttfamily void i\+Ship\+::get\+User\+Typed\+Ship (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Type ship request. 
+
+Method which manage user ship type. \begin{DoxyWarning}{Warning}
+Position have to be type two times. It is strange behavior which should not appear but anyway it appear and i dont know why because on other compiler it works fine. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{structi_ship_a9305db198c9d96ed3540f86764730543}\label{structi_ship_a9305db198c9d96ed3540f86764730543}} 
+\index{iShip@{iShip}!shipyard@{shipyard}}
+\index{shipyard@{shipyard}!iShip@{iShip}}
+\doxysubsubsection{\texorpdfstring{shipyard()}{shipyard()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classship}{ship}} $\ast$ i\+Ship\+::shipyard (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structi_board}{i\+Board}} \&}]{\+\_\+board\+Interface }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Ship factory. 
+
+Method which is factory of ships. It used ship\+Type to define which ship type should be created by \+::new operator. 
+\begin{DoxyExceptions}{Exceptions}
+{\em bad\+\_\+alloc} & When there is not enough memory to allocate choosen ship. \\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+board\+Interface} & Reference to \mbox{\hyperlink{structi_board}{i\+Board}} interface. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Address of created ship. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{user_data_interface_8h}{user\+Data\+Interface.\+h}}\item 
+user\+Data\+Interface.\+cpp\end{DoxyCompactItemize}

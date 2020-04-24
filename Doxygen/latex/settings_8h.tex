@@ -1,0 +1,60 @@
+\hypertarget{settings_8h}{}\doxysection{settings.\+h File Reference}
+\label{settings_8h}\index{settings.h@{settings.h}}
+
+
+Header with settings variables and magic numbers used as parameters in software.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{settings_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{settings_8h_a9a8aa292716a0bf27656fbbd80080aa1}\label{settings_8h_a9a8aa292716a0bf27656fbbd80080aa1}} 
+enum \mbox{\hyperlink{settings_8h_a9a8aa292716a0bf27656fbbd80080aa1}{ship\+Type}} \{ \newline
+{\bfseries Scout} = 1, 
+{\bfseries Ubot}, 
+{\bfseries Hybrid}, 
+{\bfseries Destroyer}, 
+\newline
+{\bfseries Aircraft\+\_\+carrier}
+ \}
+\begin{DoxyCompactList}\small\item\em Ships type using in \mbox{\hyperlink{shipyard_8h}{shipyard.\+h}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{settings_8h_a38e5db0736327d249b790fa07a6467f6}\label{settings_8h_a38e5db0736327d249b790fa07a6467f6}} 
+constexpr int \mbox{\hyperlink{settings_8h_a38e5db0736327d249b790fa07a6467f6}{board\+Rows}} = 10
+\begin{DoxyCompactList}\small\item\em Rows in boards. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{settings_8h_a31f50537a91d54201e19fa1216d03d87}\label{settings_8h_a31f50537a91d54201e19fa1216d03d87}} 
+constexpr int \mbox{\hyperlink{settings_8h_a31f50537a91d54201e19fa1216d03d87}{board\+Columns}} = 10
+\begin{DoxyCompactList}\small\item\em columns in boards \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{settings_8h_ac66ae599cbe4f255ae3fbd4d64ae5d11}\label{settings_8h_ac66ae599cbe4f255ae3fbd4d64ae5d11}} 
+constexpr int \mbox{\hyperlink{settings_8h_ac66ae599cbe4f255ae3fbd4d64ae5d11}{fleet\+Points}} = 10
+\begin{DoxyCompactList}\small\item\em Player points. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{settings_8h_a1024f3cd960cb62d9f0932cacd251b29}\label{settings_8h_a1024f3cd960cb62d9f0932cacd251b29}} 
+constexpr const char $\ast$ \mbox{\hyperlink{settings_8h_a1024f3cd960cb62d9f0932cacd251b29}{string\+User\+Type}} \mbox{[}6\mbox{]} \{\char`\"{}Discard\char`\"{} ,\char`\"{}Scout\char`\"{}, \char`\"{}Ubot\char`\"{}, \char`\"{}Hybrid\char`\"{}, \char`\"{}Destroyer\char`\"{}, \char`\"{}Aircraft\+\_\+carrier\char`\"{}\}
+\begin{DoxyCompactList}\small\item\em Options which are shown when user should choose ship type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{settings_8h_a454f1444d6bdb623a01bc92ed6df0e81}\label{settings_8h_a454f1444d6bdb623a01bc92ed6df0e81}} 
+constexpr int \mbox{\hyperlink{settings_8h_a454f1444d6bdb623a01bc92ed6df0e81}{highest\+Possible\+Ship\+Type}} = 5
+\begin{DoxyCompactList}\small\item\em Maximum ship type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{settings_8h_ac1625b576f56cd181b5802802977add6}\label{settings_8h_ac1625b576f56cd181b5802802977add6}} 
+constexpr int \mbox{\hyperlink{settings_8h_ac1625b576f56cd181b5802802977add6}{lowest\+Possible\+Ship\+Type}} = 1
+\begin{DoxyCompactList}\small\item\em Minimum ship type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header with settings variables and magic numbers used as parameters in software. 
+
+\begin{DoxyAuthor}{Author}
+kkoltunski 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+April 2020 
+\end{DoxyDate}

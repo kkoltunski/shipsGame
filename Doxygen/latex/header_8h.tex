@@ -1,0 +1,87 @@
+\hypertarget{header_8h}{}\doxysection{header.\+h File Reference}
+\label{header_8h}\index{header.h@{header.h}}
+
+
+Main header with included libraries.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include \char`\"{}user\+Data\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}settings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}field.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}board.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fleet.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}shipyard.\+h\char`\"{}}\newline
+Include dependency graph for header.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{header_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{header_8h_af4f4edef7ba8c55b74fc3501bbada452}\label{header_8h_af4f4edef7ba8c55b74fc3501bbada452}} 
+\mbox{\hyperlink{classfleet}{fleet}} {\bfseries Player1} (\mbox{\hyperlink{settings_8h_ac66ae599cbe4f255ae3fbd4d64ae5d11}{fleet\+Points}})
+\item 
+\mbox{\Hypertarget{header_8h_a8925cc884830dd5f9f8d65d647fbfd0d}\label{header_8h_a8925cc884830dd5f9f8d65d647fbfd0d}} 
+\mbox{\hyperlink{classfleet}{fleet}} {\bfseries Player2} (\mbox{\hyperlink{settings_8h_ac66ae599cbe4f255ae3fbd4d64ae5d11}{fleet\+Points}})
+\item 
+std\+::ostream \& \mbox{\hyperlink{header_8h_a75adb1cee7d7d878c442a82ab2d04785}{operator$<$$<$}} (std\+::ostream \&\+\_\+in\+Stream, \mbox{\hyperlink{classfield}{field}} \&\+\_\+in\+Field)
+\begin{DoxyCompactList}\small\item\em Operator to make possible showing field information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{header_8h_a65289a5743cf8384caa19efffc79387f}\label{header_8h_a65289a5743cf8384caa19efffc79387f}} 
+\mbox{\hyperlink{classboard}{board}} {\bfseries Board1}
+\item 
+\mbox{\Hypertarget{header_8h_a2d8044b34921e357606932167c8ec240}\label{header_8h_a2d8044b34921e357606932167c8ec240}} 
+\mbox{\hyperlink{classboard}{board}} {\bfseries Board2} = Board1
+\item 
+\mbox{\Hypertarget{header_8h_a008e6146575cce204ae426d817ac1115}\label{header_8h_a008e6146575cce204ae426d817ac1115}} 
+\mbox{\hyperlink{classboard}{board}} $\ast$ {\bfseries Board\+Address\+Tab} \mbox{[}2\mbox{]} \{\&Board1, \&Board2\}
+\item 
+\mbox{\Hypertarget{header_8h_abf9cd2bf33e09e44282327ab69c2acd5}\label{header_8h_abf9cd2bf33e09e44282327ab69c2acd5}} 
+\mbox{\hyperlink{classfleet}{fleet}} $\ast$ {\bfseries Player\+Address\+Tab} \mbox{[}2\mbox{]} \{\&Player1, \&Player2\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main header with included libraries. 
+
+\begin{DoxyAuthor}{Author}
+kkoltunski 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+April 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{header_8h_a75adb1cee7d7d878c442a82ab2d04785}\label{header_8h_a75adb1cee7d7d878c442a82ab2d04785}} 
+\index{header.h@{header.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{\+\_\+in\+Stream,  }\item[{\mbox{\hyperlink{classfield}{field}} \&}]{\+\_\+in\+Field }\end{DoxyParamCaption})}
+
+
+
+Operator to make possible showing field information. 
+
+External $<$$<$ operator to make possible showing field information.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+in\+Stream} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+in\+Field} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to used \+\_\+in\+Stream 
+\end{DoxyReturn}

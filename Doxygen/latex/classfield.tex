@@ -1,0 +1,97 @@
+\hypertarget{classfield}{}\doxysection{field Class Reference}
+\label{classfield}\index{field@{field}}
+
+
+{\ttfamily \#include $<$field.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfield}{field}} \& \mbox{\hyperlink{classfield_a0cc7edef6fc7f3e7b97d7d8079bc4f8f}{operator=}} (\mbox{\hyperlink{classfield}{field}} \&\+\_\+original\+Field)
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classfield_adc10fae41d02b04cf4bbd35544fd2ecd}\label{classfield_adc10fae41d02b04cf4bbd35544fd2ecd}} 
+class \mbox{\hyperlink{classfield_adc10fae41d02b04cf4bbd35544fd2ecd}{i\+Board}}
+\begin{DoxyCompactList}\small\item\em User and board communication interface. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classfield_ae88d3b8729ca7a0d2e4a5c1b03833b80}\label{classfield_ae88d3b8729ca7a0d2e4a5c1b03833b80}} 
+class \mbox{\hyperlink{classfield_ae88d3b8729ca7a0d2e4a5c1b03833b80}{board}}
+\begin{DoxyCompactList}\small\item\em Board is making changes in fields. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classfield_aa75352685991cd220fe898a3ca61042c}\label{classfield_aa75352685991cd220fe898a3ca61042c}} 
+class \mbox{\hyperlink{classfield_aa75352685991cd220fe898a3ca61042c}{ship}}
+\begin{DoxyCompactList}\small\item\em Ship function modyfing field states. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classfield_a94154d8d06705c0e61a247ed3d1858bd}\label{classfield_a94154d8d06705c0e61a247ed3d1858bd}} 
+class \mbox{\hyperlink{classfield_a94154d8d06705c0e61a247ed3d1858bd}{scout}}
+\begin{DoxyCompactList}\small\item\em Ship function modyfing field states. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classfield_a0fb3d2402c4e343e43b9810b50342c04}\label{classfield_a0fb3d2402c4e343e43b9810b50342c04}} 
+class \mbox{\hyperlink{classfield_a0fb3d2402c4e343e43b9810b50342c04}{u\+\_\+bot}}
+\begin{DoxyCompactList}\small\item\em Ship function modyfing field states. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classfield_affef6fe0ba7c7fe854a98ec63b8c925a}\label{classfield_affef6fe0ba7c7fe854a98ec63b8c925a}} 
+class \mbox{\hyperlink{classfield_affef6fe0ba7c7fe854a98ec63b8c925a}{hybrid}}
+\begin{DoxyCompactList}\small\item\em Ship function modyfing field states. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classfield_a57b70d64fc798cc366272fd7cde92195}\label{classfield_a57b70d64fc798cc366272fd7cde92195}} 
+class \mbox{\hyperlink{classfield_a57b70d64fc798cc366272fd7cde92195}{destroyer}}
+\begin{DoxyCompactList}\small\item\em Ship function modyfing field states. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classfield_ad2d286ae3fedb13bc7005c7692d3046e}\label{classfield_ad2d286ae3fedb13bc7005c7692d3046e}} 
+class \mbox{\hyperlink{classfield_ad2d286ae3fedb13bc7005c7692d3046e}{aircraft\+\_\+carrier}}
+\begin{DoxyCompactList}\small\item\em Ship function modyfing field states. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{classfield_a75adb1cee7d7d878c442a82ab2d04785}{operator$<$$<$}} (std\+::ostream \&\+\_\+in\+Stream, \mbox{\hyperlink{classfield}{field}} \&\+\_\+in\+Field)
+\begin{DoxyCompactList}\small\item\em External $<$$<$ operator to make possible showing field information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Field is class representing part of board. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfield_a0cc7edef6fc7f3e7b97d7d8079bc4f8f}\label{classfield_a0cc7edef6fc7f3e7b97d7d8079bc4f8f}} 
+\index{field@{field}!operator=@{operator=}}
+\index{operator=@{operator=}!field@{field}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfield}{field}} \& field\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfield}{field}} \&}]{\+\_\+original\+Field }\end{DoxyParamCaption})}
+
+
+
+Copy operator. 
+
+Copy operator (Training purposes).
+
+It copy only ocupation.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+original\+Field} & Reference to original field. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Copy address. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classfield_a75adb1cee7d7d878c442a82ab2d04785}\label{classfield_a75adb1cee7d7d878c442a82ab2d04785}} 
+\index{field@{field}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!field@{field}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{\+\_\+in\+Stream,  }\item[{\mbox{\hyperlink{classfield}{field}} \&}]{\+\_\+in\+Field }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+External $<$$<$ operator to make possible showing field information. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+in\+Stream} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+in\+Field} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to used \+\_\+in\+Stream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{field_8h}{field.\+h}}\item 
+field.\+cpp\end{DoxyCompactItemize}

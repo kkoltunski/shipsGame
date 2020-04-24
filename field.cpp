@@ -1,10 +1,23 @@
 #include "field.h"
+#include "shipyard.h"
 
-field& field::operator=(field& _in) {
-	if (this != &_in) {
+/**
+ * \brief Copy operator (Training purposes).
+ * 
+ * It copy only ocupation.
+ * 
+ * \param [in] _originalField Reference to original field.
+ * \return Copy address.
+ */
+field& field::operator=(field& _originalField) {
+	if (this != &_originalField){
 		if (pToShip != nullptr)	delete pToShip;
 
-		occupiedByShip = _in.occupiedByShip;
+		occupiedByShip = _originalField.occupiedByShip;
 	}
 	return *this;
+}
+
+field::~field(){
+
 }

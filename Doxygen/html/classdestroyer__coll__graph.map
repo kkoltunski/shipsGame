@@ -1,0 +1,5 @@
+<map id="destroyer" name="destroyer">
+<area shape="rect" id="node1" title=" " alt="" coords="5,171,81,197"/>
+<area shape="rect" id="node2" href="$classship.html" title=" " alt="" coords="20,95,67,121"/>
+<area shape="rect" id="node3" href="$classfield.html" title=" " alt="" coords="21,5,66,32"/>
+</map>

@@ -1,0 +1,146 @@
+\hypertarget{structi_board}{}\doxysection{i\+Board Struct Reference}
+\label{structi_board}\index{iBoard@{iBoard}}
+
+
+{\ttfamily \#include $<$user\+Data\+Interface.\+h$>$}
+
+
+
+Inheritance diagram for i\+Board\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{structi_board__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for i\+Board\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{structi_board__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structi_board_a5b89218f67acccb52dd38f67ff92585b}\label{structi_board_a5b89218f67acccb52dd38f67ff92585b}} 
+string \& \mbox{\hyperlink{structi_board_a5b89218f67acccb52dd38f67ff92585b}{set\+User\+Typed\+Position}} () noexcept(true)
+\begin{DoxyCompactList}\small\item\em Returns information about typed position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structi_board_aad09a27cee06a55b5ccaa889198cd892}\label{structi_board_aad09a27cee06a55b5ccaa889198cd892}} 
+void \mbox{\hyperlink{structi_board_aad09a27cee06a55b5ccaa889198cd892}{make\+Columns\+Definition}} () noexcept(true)
+\begin{DoxyCompactList}\small\item\em Preparing columns definitions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structi_board_a31ede88c5342eb7366b02893365f1650}\label{structi_board_a31ede88c5342eb7366b02893365f1650}} 
+bool \mbox{\hyperlink{structi_board_a31ede88c5342eb7366b02893365f1650}{return\+Typed\+Direction}} () const noexcept(false)
+\begin{DoxyCompactList}\small\item\em Returns information about typed direction. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structi_board_a2fd2ce56fd70f1266589b8db877ebc48}\label{structi_board_a2fd2ce56fd70f1266589b8db877ebc48}} 
+int \mbox{\hyperlink{structi_board_a2fd2ce56fd70f1266589b8db877ebc48}{return\+Absolute\+Row}} () const noexcept(true)
+\begin{DoxyCompactList}\small\item\em Returns calculated absolute row. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structi_board_a8979e826bdf7f74910b4bb69f1730f83}\label{structi_board_a8979e826bdf7f74910b4bb69f1730f83}} 
+int \mbox{\hyperlink{structi_board_a8979e826bdf7f74910b4bb69f1730f83}{return\+Absolute\+Column}} () const noexcept(true)
+\begin{DoxyCompactList}\small\item\em Returns calculated absolute column. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structi_board_aed72d8c6e7844b99bf09602e272eb05d}{add\+Ship}} (\mbox{\hyperlink{classship}{ship}} $\ast$\+\_\+p\+To\+Ship) noexcept(true)
+\begin{DoxyCompactList}\small\item\em Order add ship. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structi_board_af77f2aba2b3404ab61687ab45f74a46f}{is\+User\+Type\+Correct}} () noexcept(false)
+\begin{DoxyCompactList}\small\item\em Checking user typed position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structi_board_abf1bdb5cc0449baa71e5502c31968ff7}{get\+Direction}} () noexcept(true)
+\begin{DoxyCompactList}\small\item\em Set request about direction. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structi_board_ac0a1889aecad95686cc439435a27738e}{get\+Field\+Occupation}} (short \+\_\+row=0, short \+\_\+column=0) const noexcept(true)
+\begin{DoxyCompactList}\small\item\em Rate if field is occupied. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfield}{field}} $\ast$ \mbox{\hyperlink{structi_board_a8cd65756c5148ab97ef71a52ca2f1233}{get\+Field\+Address}} () const noexcept(true)
+\begin{DoxyCompactList}\small\item\em Get address of typed field. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structi_board_a871f8828b739f6e3262f6acceb0baca5}\label{structi_board_a871f8828b739f6e3262f6acceb0baca5}} 
+virtual void \mbox{\hyperlink{structi_board_a871f8828b739f6e3262f6acceb0baca5}{initialize}} () noexcept(true) override
+\begin{DoxyCompactList}\small\item\em Method to initialize interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Partial interface of main interface. Is used to geting informations from real board and giving it orders. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structi_board_aed72d8c6e7844b99bf09602e272eb05d}\label{structi_board_aed72d8c6e7844b99bf09602e272eb05d}} 
+\index{iBoard@{iBoard}!addShip@{addShip}}
+\index{addShip@{addShip}!iBoard@{iBoard}}
+\doxysubsubsection{\texorpdfstring{addShip()}{addShip()}}
+{\footnotesize\ttfamily void i\+Board\+::add\+Ship (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classship}{ship}} $\ast$}]{\+\_\+p\+To\+Ship }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Order add ship. 
+
+Method is using pointer to actual board to give order to add a ship. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+p\+To\+Ship} & Ship addres which should be added to board. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structi_board_abf1bdb5cc0449baa71e5502c31968ff7}\label{structi_board_abf1bdb5cc0449baa71e5502c31968ff7}} 
+\index{iBoard@{iBoard}!getDirection@{getDirection}}
+\index{getDirection@{getDirection}!iBoard@{iBoard}}
+\doxysubsubsection{\texorpdfstring{getDirection()}{getDirection()}}
+{\footnotesize\ttfamily void i\+Board\+::get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Set request about direction. 
+
+Ask user to type direction in which future ship will be places. \mbox{\Hypertarget{structi_board_a8cd65756c5148ab97ef71a52ca2f1233}\label{structi_board_a8cd65756c5148ab97ef71a52ca2f1233}} 
+\index{iBoard@{iBoard}!getFieldAddress@{getFieldAddress}}
+\index{getFieldAddress@{getFieldAddress}!iBoard@{iBoard}}
+\doxysubsubsection{\texorpdfstring{getFieldAddress()}{getFieldAddress()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfield}{field}} $\ast$ i\+Board\+::get\+Field\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Get address of typed field. 
+
+Method is using pointer to actual board and geting typed field address. \begin{DoxyReturn}{Returns}
+Information of user typed field address. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structi_board_ac0a1889aecad95686cc439435a27738e}\label{structi_board_ac0a1889aecad95686cc439435a27738e}} 
+\index{iBoard@{iBoard}!getFieldOccupation@{getFieldOccupation}}
+\index{getFieldOccupation@{getFieldOccupation}!iBoard@{iBoard}}
+\doxysubsubsection{\texorpdfstring{getFieldOccupation()}{getFieldOccupation()}}
+{\footnotesize\ttfamily bool i\+Board\+::get\+Field\+Occupation (\begin{DoxyParamCaption}\item[{short}]{\+\_\+row = {\ttfamily 0},  }\item[{short}]{\+\_\+column = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Rate if field is occupied. 
+
+Method is using pointer to actual board and asking about field occupation. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+row} & Row offset from absolute row value. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+column} & column offset from absolute column value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Information if field is occupied (true -\/ field is occupied, false -\/ field is free). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structi_board_af77f2aba2b3404ab61687ab45f74a46f}\label{structi_board_af77f2aba2b3404ab61687ab45f74a46f}} 
+\index{iBoard@{iBoard}!isUserTypeCorrect@{isUserTypeCorrect}}
+\index{isUserTypeCorrect@{isUserTypeCorrect}!iBoard@{iBoard}}
+\doxysubsubsection{\texorpdfstring{isUserTypeCorrect()}{isUserTypeCorrect()}}
+{\footnotesize\ttfamily bool i\+Board\+::is\+User\+Type\+Correct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Checking user typed position. 
+
+Main method to check if user typed position is correct. 
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{structincorrect_position}{incorrect\+Position}}} & While user type is not correct. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+Result of position checking (true -\/ user type is correct, false -\/ user type is not correct). 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{user_data_interface_8h}{user\+Data\+Interface.\+h}}\item 
+user\+Data\+Interface.\+cpp\end{DoxyCompactItemize}

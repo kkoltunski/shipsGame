@@ -1,7 +1,11 @@
 #include "userDataInterface.h"
 
 //iBoard interface methods
-inline bool iBoardField::isTypedPositionValid() noexcept(true) {
+/**
+ * Checking is basing on board columns and rows definition.
+ * \return Result of checking (true - position is correct, false - position is not correct).
+ */
+inline bool iBoard::isTypedPositionValid() noexcept(true) {
 	bool result{ true };
 	if (userTypedPosition.find_first_of(columnsDefinitions) == string::npos) result = false;
 	if (userTypedPosition.find_first_of(rowsDefinitions) == string::npos) result = false;
@@ -9,7 +13,10 @@ inline bool iBoardField::isTypedPositionValid() noexcept(true) {
 	return result;
 }
 
-void iBoardField::calculateColumnAbsoluteValue() noexcept(true) {
+/**
+ * Translating user column type to absolute values. 
+ */
+void iBoard::calculateColumnAbsoluteValue() noexcept(true) {
 	size_t columnPosition = userTypedPosition.find_first_of(columnsDefinitions);
 	char nextChar = userTypedPosition[columnPosition + 1];
 
@@ -21,7 +28,10 @@ void iBoardField::calculateColumnAbsoluteValue() noexcept(true) {
 	absoluteColumn = (absoluteColumn > (boardColumns - 1) ? (boardColumns - 1) : absoluteColumn);
 }
 
-void iBoardField::calculateRowAbsoluteValue() noexcept(true) {
+/**
+ * Translating user row type to absolute values.
+ */
+void iBoard::calculateRowAbsoluteValue() noexcept(true) {
 	size_t rowPosition = userTypedPosition.find_first_of(rowsDefinitions);
 	string help = userTypedPosition.substr(rowPosition, 2);
 
@@ -29,7 +39,12 @@ void iBoardField::calculateRowAbsoluteValue() noexcept(true) {
 	absoluteRow = (absoluteRow > (boardRows - 1) ? (boardRows - 1) : absoluteRow);
 }
 
-bool iBoardField::isUserTypeCorrect() noexcept(false) {
+/**
+ * Main method to check if user typed position is correct. 
+ * \throw incorrectPosition While user type is not correct.
+ * \return Result of position checking (true - user type is correct, false - user type is not correct).
+ */
+bool iBoard::isUserTypeCorrect() noexcept(false) {
 	bool result;
 
 	try {
@@ -52,7 +67,10 @@ bool iBoardField::isUserTypeCorrect() noexcept(false) {
 	return result;
 }
 
-void iBoardField::getDirection() noexcept(true) {
+/**
+ * Ask user to type direction in which future ship will be places.
+ */
+void iBoard::getDirection() noexcept(true) {
 	char typedDirection;
 
 	do {
@@ -67,35 +85,66 @@ void iBoardField::getDirection() noexcept(true) {
 	Dir = (typedDirection == 'V' ? true : false);
 }
 
-bool iBoardField::isFieldOccupied(short _row, short _column) const noexcept(true) {
+/**
+ * Method is using pointer to actual board and asking about field occupation.
+ * \param [in] _row Row offset from absolute row value.
+ * \param [in] _column column offset from absolute column value.
+ * \return Information if field is occupied (true - field is occupied, false - field is free).
+ */
+bool iBoard::getFieldOccupation(short _row, short _column) const noexcept(true) {
 	return objectAddress->fieldAdresses[absoluteRow + _row][absoluteColumn + _column]->occupiedByShip;
 }
 
-field* iBoardField::returnFieldAddress() const noexcept(true) {
+/**
+ * Method is using pointer to actual board and geting typed field address.
+ * \return Information of user typed field address.
+ */
+field* iBoard::getFieldAddress() const noexcept(true) {
 	return objectAddress->fieldAdresses[absoluteRow][absoluteColumn];
 }
 
-void iBoardField::addShip(ship* _pToShip) noexcept(true) {
+/**
+ * Method is using pointer to actual board to give order to add a ship.
+ * \param [in] _pToShip Ship addres which should be added to board.
+ */
+void iBoard::addShip(ship* _pToShip) noexcept(true) {
 	objectAddress->createdShips.push_back(_pToShip);
 }
 ///////////////////////////////////////////////////////////////////////////////////
 
 //iPlayer interface methods
+/**
+ * Method is using pointer to actual player to get name information.
+ * \return Player name.
+ */
 string iPlayer::returnPlayerName() const noexcept(true) {
 	return objectAddress->ID;
 }
 
-void iPlayer::updatePoints(short _pointToUpdate) noexcept(true) {
-	objectAddress->points -= _pointToUpdate;
+/**
+ * \param [in] _pointsToUpdate Number of which actual points number has to be decreased.
+ */
+void iPlayer::updatePoints(short _pointsToUpdate) noexcept(true) {
+	objectAddress->points -= _pointsToUpdate;
 }
 
+/**
+ * Method is using pointer to actual player to get actual points information.
+ * \return Player available points..
+ */
 int iPlayer::returnPoints() const noexcept(true) {
 	return objectAddress->points;
 }
 ///////////////////////////////////////////////////////////////////////////////////
 
 //iShip interface methods
-void iShip::calculatePossibleShips(bool _direction, const iBoardField& _boardInterface, const iPlayer& _playerInterface) noexcept(true) {
+/**
+ * Main method to manage possible ships calculation depend on placement direction and player possible points.
+ * \param [in] _direction Ship placement direction.
+ * \param [in] _boardInterface Reference to iBoard interface.
+ * \param [in] _playerInterface Reference to iPlayer interface.
+ */
+void iShip::calculatePossibleShips(bool _direction, const iBoard& _boardInterface, const iPlayer& _playerInterface) noexcept(true) {
 
 	if (_direction) calculateVerticalPossibilities(_boardInterface);
 	else calculateHorizontalPossibilities(_boardInterface);
@@ -103,27 +152,43 @@ void iShip::calculatePossibleShips(bool _direction, const iBoardField& _boardInt
 	adjustPossibleShipValue(_playerInterface.returnPoints());
 }
 
-void iShip::calculateVerticalPossibilities(const iBoardField& _boardInterface) {
+/**
+ * Method which calculate possible ships in vertical direction.
+ * \param [in] _boardInterface Reference to iBoard interface.
+ */
+void iShip::calculateVerticalPossibilities(const iBoard& _boardInterface) {
 	verticalDistanceToBorder = (boardRows - _boardInterface.returnAbsoluteRow());
 
 	for (possibleShips = 0; possibleShips < verticalDistanceToBorder; possibleShips++) {
-		if (_boardInterface.isFieldOccupied(possibleShips, 0))	break;
+		if (_boardInterface.getFieldOccupation(possibleShips, 0))	break;
 	}
 }
 
-void iShip::calculateHorizontalPossibilities(const iBoardField& _boardInterface) {
+/**
+ * Method which calculate possible ships in horizontal direction.
+ * \param [in] _boardInterface Reference to iBoard interface.
+ */
+void iShip::calculateHorizontalPossibilities(const iBoard& _boardInterface) {
 	horizontalDistanceToBorder = (boardColumns - _boardInterface.returnAbsoluteColumn());
 
 	for (possibleShips = 0; possibleShips < horizontalDistanceToBorder; possibleShips++) {
-		if (_boardInterface.isFieldOccupied(0, possibleShips))	break;
+		if (_boardInterface.getFieldOccupation(0, possibleShips))	break;
 	}
 }
 
+/**
+ * Method which make corrections of possible ships depend on \ref highestPossibleShipType and possible player points.
+ * \param [in] _boardInterface Reference to iBoard interface.
+ */
 void iShip::adjustPossibleShipValue(short _points) noexcept(true) {
 	possibleShips = ((possibleShips > highestPossibleShipType) ? highestPossibleShipType : possibleShips);
 	possibleShips = ((possibleShips > _points) ? _points : possibleShips);
 }
 
+/**
+ * Method which manage user ship type. \warning Position have to be type two times. It is strange behavior which should not appear
+ * but anyway it appear and i dont know why because on other compiler it works fine.
+ */
 void iShip::getUserTypedShip() noexcept(true) {
 	short typedShip{ 0 };
 
@@ -138,7 +203,7 @@ void iShip::getUserTypedShip() noexcept(true) {
 		//	if (cin.fail()) cout << "fail" << endl;
 		//} while (!cin);
 
-		cin.clear(0);														//VisualStudio bug??????? - have to introduce value 2 times
+		cin.clear();														//VisualStudio bug??????? - have to introduce value 2 times
 		cin.ignore();
 		cin >> typedShip;
 		if (cin.fail()) cout << "Wrong type." << endl;
@@ -149,24 +214,30 @@ void iShip::getUserTypedShip() noexcept(true) {
 	shipType = typedShip;
 }
 
-ship* iShip::shipyard(const iBoardField& _boardInterface) noexcept(true) {
+/**
+ * Method which is factory of ships. It used \ref shipType to define which ship type should be created by ::new operator. 
+ * \throw bad_alloc When there is not enough memory to allocate choosen ship.
+ * \param [in] _boardInterface Reference to iBoard interface.
+ * \return Address of created ship. 
+ */
+ship* iShip::shipyard(const iBoard& _boardInterface) noexcept(true) {
 	ship* pToShip{ nullptr };
 	try {
 		switch (shipType) {
 		case (static_cast<short>(shipType::Aircraft_carrier)):
-			pToShip = new aircraft_carrier(_boardInterface.returnFieldAddress(), _boardInterface.returnTypedDirection(), shipType::Aircraft_carrier);
+			pToShip = new aircraft_carrier(_boardInterface.getFieldAddress(), _boardInterface.returnTypedDirection(), shipType::Aircraft_carrier);
 			break;
 		case (static_cast<short>(shipType::Destroyer)):
-			pToShip = new destroyer(_boardInterface.returnFieldAddress(), _boardInterface.returnTypedDirection(), shipType::Destroyer);
+			pToShip = new destroyer(_boardInterface.getFieldAddress(), _boardInterface.returnTypedDirection(), shipType::Destroyer);
 			break;
 		case (static_cast<short>(shipType::Hybrid)):
-			pToShip = new hybrid(_boardInterface.returnFieldAddress(), _boardInterface.returnTypedDirection(), shipType::Hybrid);
+			pToShip = new hybrid(_boardInterface.getFieldAddress(), _boardInterface.returnTypedDirection(), shipType::Hybrid);
 			break;
 		case (static_cast<short>(shipType::Ubot)):
-			pToShip = new u_bot(_boardInterface.returnFieldAddress(), _boardInterface.returnTypedDirection(), shipType::Ubot);
+			pToShip = new u_bot(_boardInterface.getFieldAddress(), _boardInterface.returnTypedDirection(), shipType::Ubot);
 			break;
 		case (static_cast<short>(shipType::Scout)):
-			pToShip = new scout(_boardInterface.returnFieldAddress(), _boardInterface.returnTypedDirection(), shipType::Scout);
+			pToShip = new scout(_boardInterface.getFieldAddress(), _boardInterface.returnTypedDirection(), shipType::Scout);
 			break;
 		defaul:
 			break;
@@ -174,7 +245,7 @@ ship* iShip::shipyard(const iBoardField& _boardInterface) noexcept(true) {
 	}
 	catch (std::bad_alloc& exception) {
 		cout << exception.what() << endl;
-		terminate();
+		std::terminate();
 	}
 
 	return pToShip;
@@ -182,6 +253,21 @@ ship* iShip::shipyard(const iBoardField& _boardInterface) noexcept(true) {
 ///////////////////////////////////////////////////////////////////////////////////
 
 //userDataInterface - main interface methods
+/**
+ * Assigning addresses of referenced objects and give iBoard interface order to prepare columns definition.
+ * \param [in] _board Real board address.
+ * \param [in] _player Real player address.
+ */
+userDataInterface::userDataInterface(board* _board, fleet* _player) {
+	boardInterface.addressAssigment(_board);
+	playerInterface.addressAssigment(_player);
+
+	boardInterface.makeColumnsDefinition();
+}
+
+/**
+ * Other interfaces initialize() method calls and initialize itself.
+ */
 void userDataInterface::initialize() noexcept(true) {
 	boardInterface.initialize();
 	playerInterface.initialize();
@@ -190,13 +276,19 @@ void userDataInterface::initialize() noexcept(true) {
 	initialized = true;
 }
 
+/**
+ * Main method to manage user typed position. Position is typed, then checked if is valid, then checked if field is valid
+ * and at the end user have to type direction.
+ * \throw positionOcupied When \ref getFieldOccupation() method result is true.
+ * \return Correctness state (true - position and direction typed correct, false - position is occupied).
+ */
 bool userDataInterface::manageUserTypedPosition() noexcept(false) {
 	bool typedPositionValid = false;
 
 	try {
 		getUserType();
 		if (boardInterface.isUserTypeCorrect()) {
-			if (!boardInterface.isFieldOccupied()) {
+			if (!boardInterface.getFieldOccupation()) {
 				boardInterface.getDirection();
 
 				typedPositionValid = true;
@@ -216,6 +308,9 @@ void userDataInterface::possibleShipsCalculation() {
 	shipInterface.calculatePossibleShips(directionPlacement, boardInterface, playerInterface);
 }
 
+/**
+ * Method is used to show player ships options to choose.
+ */
 void userDataInterface::showAvailableShipsInConsole() noexcept(false) {
 	cout << "You have " << playerInterface.returnPoints() << " points.\n"
 		<< "Possible ships in this area with your points : \n";
@@ -225,16 +320,31 @@ void userDataInterface::showAvailableShipsInConsole() noexcept(false) {
 	}
 }
 
+/**
+ * Method call \ref shipyard() to try place ship and if placement is succesfull 
+ * then give order to board (through iBoard interface) to add it's address to vector.
+ */
 void userDataInterface::shipPlacement() noexcept(false) {
 	ship* pToShip = shipInterface.shipyard(boardInterface);
-	boardInterface.addShip(pToShip);
+	if (pToShip != nullptr) {
+		boardInterface.addShip(pToShip);
+	}
 }
 
+/**
+ * Method used to update player point value after successfull ship placement process.
+ * \return Feedback if player has still points (true - player has points, false - player points are 0).
+ */
 bool userDataInterface::pointsControll() noexcept(true) {
 	playerInterface.updatePoints(shipInterface.returnChoosenShipType());
 	return playerInterface.returnPoints();
 }
 
+/**
+ * Method used to update references to real object stored in interfaces.
+ * \param [in] _board Board address which should be assign as new object reference.
+ * \param [in] _player Player address which should be assign as new object reference.
+ */
 void userDataInterface::reloadReferences(board* _board, fleet* _player) noexcept(true) {
 	playerInterface.addressAssigment(_player);
 	boardInterface.addressAssigment(_board);

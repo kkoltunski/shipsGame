@@ -1,0 +1,92 @@
+\hypertarget{structi_player}{}\doxysection{i\+Player Struct Reference}
+\label{structi_player}\index{iPlayer@{iPlayer}}
+
+
+{\ttfamily \#include $<$user\+Data\+Interface.\+h$>$}
+
+
+
+Inheritance diagram for i\+Player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{structi_player__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for i\+Player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{structi_player__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{structi_player_a7a464ecca24b48bd05afa1a1fdeacdc0}{return\+Player\+Name}} () const noexcept(true)
+\begin{DoxyCompactList}\small\item\em Return player name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structi_player_a140e2bb0dbceeaac25e3a0193a3ab9aa}{update\+Points}} (short \+\_\+point\+To\+Update) noexcept(true)
+\begin{DoxyCompactList}\small\item\em Updating player points after ship placement. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structi_player_a0f2574653ea43835727e24984a31cc93}{return\+Points}} () const noexcept(true)
+\begin{DoxyCompactList}\small\item\em Return available player points. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structi_player_a8276d0a22450c32aa4ffaaf94549f915}\label{structi_player_a8276d0a22450c32aa4ffaaf94549f915}} 
+virtual void \mbox{\hyperlink{structi_player_a8276d0a22450c32aa4ffaaf94549f915}{initialize}} () noexcept(true) override
+\begin{DoxyCompactList}\small\item\em Method to initialize interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Partial interface of main interface. Is used to geting informations from real player and giving it orders. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structi_player_a7a464ecca24b48bd05afa1a1fdeacdc0}\label{structi_player_a7a464ecca24b48bd05afa1a1fdeacdc0}} 
+\index{iPlayer@{iPlayer}!returnPlayerName@{returnPlayerName}}
+\index{returnPlayerName@{returnPlayerName}!iPlayer@{iPlayer}}
+\doxysubsubsection{\texorpdfstring{returnPlayerName()}{returnPlayerName()}}
+{\footnotesize\ttfamily string i\+Player\+::return\+Player\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Return player name. 
+
+Method is using pointer to actual player to get name information. \begin{DoxyReturn}{Returns}
+Player name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structi_player_a0f2574653ea43835727e24984a31cc93}\label{structi_player_a0f2574653ea43835727e24984a31cc93}} 
+\index{iPlayer@{iPlayer}!returnPoints@{returnPoints}}
+\index{returnPoints@{returnPoints}!iPlayer@{iPlayer}}
+\doxysubsubsection{\texorpdfstring{returnPoints()}{returnPoints()}}
+{\footnotesize\ttfamily int i\+Player\+::return\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Return available player points. 
+
+Method is using pointer to actual player to get actual points information. \begin{DoxyReturn}{Returns}
+Player available points.. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structi_player_a140e2bb0dbceeaac25e3a0193a3ab9aa}\label{structi_player_a140e2bb0dbceeaac25e3a0193a3ab9aa}} 
+\index{iPlayer@{iPlayer}!updatePoints@{updatePoints}}
+\index{updatePoints@{updatePoints}!iPlayer@{iPlayer}}
+\doxysubsubsection{\texorpdfstring{updatePoints()}{updatePoints()}}
+{\footnotesize\ttfamily void i\+Player\+::update\+Points (\begin{DoxyParamCaption}\item[{short}]{\+\_\+points\+To\+Update }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Updating player points after ship placement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+points\+To\+Update} & Number of which actual points number has to be decreased. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{user_data_interface_8h}{user\+Data\+Interface.\+h}}\item 
+user\+Data\+Interface.\+cpp\end{DoxyCompactItemize}

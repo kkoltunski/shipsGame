@@ -1,0 +1,83 @@
+\hypertarget{classship}{}\doxysection{ship Class Reference}
+\label{classship}\index{ship@{ship}}
+
+
+{\ttfamily \#include $<$shipyard.\+h$>$}
+
+
+
+Inheritance diagram for ship\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classship__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ship\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classship__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classship_ab2e0c70d27d906a69850965e48c66ff1}{ship}} (\mbox{\hyperlink{classfield}{field}} $\ast$\+\_\+pos, bool \+\_\+dir, \mbox{\hyperlink{settings_8h_a9a8aa292716a0bf27656fbbd80080aa1}{ship\+Type}} \+\_\+type)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classship_ae956517de64b648e41dec9d8dbf14509}\label{classship_ae956517de64b648e41dec9d8dbf14509}} 
+virtual \mbox{\hyperlink{classship_ae956517de64b648e41dec9d8dbf14509}{$\sim$ship}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classship_a14ab0d55bd25a3642d4c9d54f511de62}\label{classship_a14ab0d55bd25a3642d4c9d54f511de62}} 
+virtual void \mbox{\hyperlink{classship_a14ab0d55bd25a3642d4c9d54f511de62}{allocator}} ()
+\begin{DoxyCompactList}\small\item\em Method to allocate ship at correct field. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classship_ab2012f2613e2c52e871e1a9adf01a8bd}\label{classship_ab2012f2613e2c52e871e1a9adf01a8bd}} 
+\mbox{\hyperlink{classfield}{field}} $\ast$ \mbox{\hyperlink{classship_ab2012f2613e2c52e871e1a9adf01a8bd}{initial\+Field\+Address}}
+\begin{DoxyCompactList}\small\item\em Field address where ship begining. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classship_a9d1569f0facfb96fbde1f8e60cdcc2c8}\label{classship_a9d1569f0facfb96fbde1f8e60cdcc2c8}} 
+bool \mbox{\hyperlink{classship_a9d1569f0facfb96fbde1f8e60cdcc2c8}{placement\+Direction}}
+\begin{DoxyCompactList}\small\item\em Information in which direction ship is placed (0 -\/ horizontal, 1 -\/ vertical). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classship_aa76c087bcc17f7458187656c40039b7d}\label{classship_aa76c087bcc17f7458187656c40039b7d}} 
+\mbox{\hyperlink{settings_8h_a9a8aa292716a0bf27656fbbd80080aa1}{ship\+Type}} \mbox{\hyperlink{classship_aa76c087bcc17f7458187656c40039b7d}{type}}
+\begin{DoxyCompactList}\small\item\em Ship type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Polimorphic alternative for switch..case instruction used in ship placement process 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classship_ab2e0c70d27d906a69850965e48c66ff1}\label{classship_ab2e0c70d27d906a69850965e48c66ff1}} 
+\index{ship@{ship}!ship@{ship}}
+\index{ship@{ship}!ship@{ship}}
+\doxysubsubsection{\texorpdfstring{ship()}{ship()}}
+{\footnotesize\ttfamily ship\+::ship (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfield}{field}} $\ast$}]{\+\_\+pos,  }\item[{bool}]{\+\_\+dir,  }\item[{\mbox{\hyperlink{settings_8h_a9a8aa292716a0bf27656fbbd80080aa1}{ship\+Type}}}]{\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Basic ship parameters initialization. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+pos} & Address of field where ship should be placed. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+dir} & Direction in which ship should be allocated. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+type} & Type of ship. Because of enum class, it can be translate to int. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{shipyard_8h}{shipyard.\+h}}\item 
+shipyard.\+cpp\end{DoxyCompactItemize}

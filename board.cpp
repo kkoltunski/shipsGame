@@ -1,35 +1,54 @@
 #include "board.h"
 
+/**
+ * Trying to allocate necessary memory for board. If allocation is successed then allocated area is partitioning
+ * as fields and assigning to vector with these \ref field addresses. Constructor also preparing board upper branch columns definition.
+ */
 board::board(){
 	try {
 		beginingOfAlocatedArea = new field[boardRows * boardColumns];
 		assignFieldAdresses();
+		makeColumnsAssigment();
 	}
 	catch (std::bad_alloc& _exBadAll) {
 		cout << "One of board allocation failed.  " << _exBadAll.what() << " occured\n";
 	}
 }	
 
-board::board(const board& In1) {												//This constructor is not necessary (just for training)
+/**
+* The same what default constructor but parameter ocupation from fields in original board are copied to new created board.
+ * @param[in] const board& originalBoard Reference to original board.
+ */
+board::board(const board& originalBoard) {
 	try {
 		beginingOfAlocatedArea = new field[boardRows * boardColumns];
-		for (int x = 0; x < (boardRows * boardColumns); x++) beginingOfAlocatedArea[x] = In1.beginingOfAlocatedArea[x];
+		for (int x = 0; x < (boardRows * boardColumns); x++) beginingOfAlocatedArea[x] = originalBoard.beginingOfAlocatedArea[x];
 		assignFieldAdresses();
+		makeColumnsAssigment();
 	}
 	catch (std::bad_alloc& _exBadAll) {
 		cout << "One of board allocation failed.  " << _exBadAll.what() << " occured\n";
 	}
 }
 
+/**
+ * It dealocate memory which was allocated for ships () and fields(alocated by board() or
+ * board(const board& originalBoard)). 
+ * First dealocated are ships, then board fields.
+ */
 board::~board() {
 	std::for_each(createdShips.begin(), createdShips.end(), [](const ship* pToShip) {delete pToShip; });
 	delete[] beginingOfAlocatedArea;
 }
 
+/**
+ * Assigning vector<field*> to vector<vector<field*>> fieldAdresses allocated by board() or
+ * board(const board& originalBoard)
+ */
 void board::assignFieldAdresses() {
 	vector<field*> helpRow{};
 
-	for (int actualRowNumber = 0; actualRowNumber < boardRows; actualRowNumber++) {								
+	for (int actualRowNumber = 0; actualRowNumber < boardRows; actualRowNumber++) {
 		for (int actualColumnNumber = 0; actualColumnNumber < boardColumns; actualColumnNumber++) {
 			helpRow.push_back(&beginingOfAlocatedArea[(actualRowNumber * boardColumns) + actualColumnNumber]);
 		}
@@ -39,30 +58,11 @@ void board::assignFieldAdresses() {
 	}
 }
 
-void board::showShipsAddresses(){												//Help Function for check if constructors work correct
-	for(int x = 0; x < boardRows; x++){
-		for(int y = 0; y < boardColumns; y++){
-			cout << "Net[" << x << "][" << y << "] = " << fieldAdresses[x][y] << endl;
-		}
-	}
-}
-
-void board::drawBoard(){
-	std::stringstream helpRow("");
-	cout << makeColumnsAssigment() << endl;
-
-	for(int x = 0; x < boardRows; x++){		
-		helpRow << std::setw(3) << std::left << (x+1);
-		for(int y = 0; y < boardColumns; y++){																
-			if(fieldAdresses[x][y]->occupiedByShip) helpRow << "[X]  ";
-			else helpRow << "[ ]  ";
-		}
-		cout << helpRow.str() << "\n\n";
-		helpRow.str("");
-	}
-}
-
-string board::makeColumnsAssigment() {
+/**
+ * Method used for preparation upper branch columns definitions which is necessary to show correct board.
+ * Method result is based on boardColumns defined in settings.h header.
+ */
+void board::makeColumnsAssigment() {
 	string alphabet{ "ABCDEFGHIJKLMNOPQRSTUVWXYZ" };
 	short alphabetSize = alphabet.size();
 	short spaceBetweenColumns{};
@@ -83,5 +83,34 @@ string board::makeColumnsAssigment() {
 		else Row << columnIngridient2 << columnIngridient1;
 	}
 
-	return Row.str();
+	upperBranchDefinition = Row.str();
+}
+
+/** 
+ * Method used for showing players boards. Method is also usefull while commissioning and software maintanence.
+ */
+void board::drawBoard() const noexcept(true) {
+	std::stringstream helpRow("");
+	cout << upperBranchDefinition << endl;
+
+	for(int x = 0; x < boardRows; x++){		
+		helpRow << std::setw(3) << std::left << (x+1);
+		for(int y = 0; y < boardColumns; y++){																
+			if(fieldAdresses[x][y]->occupiedByShip) helpRow << "[X]  ";
+			else helpRow << "[ ]  ";
+		}
+		cout << helpRow.str() << "\n\n";
+		helpRow.str("");
+	}
+}
+
+/**
+ * Method usefull while commissioning and software maintanence.
+ */
+void board::showShipsAddresses() const noexcept(true) {
+	for (int x = 0; x < boardRows; x++) {
+		for (int y = 0; y < boardColumns; y++) {
+			cout << "Net[" << x << "][" << y << "] = " << fieldAdresses[x][y] << endl;
+		}
+	}
 }

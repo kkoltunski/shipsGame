@@ -1,0 +1,5 @@
+<map id="userDataInterface.h" name="userDataInterface.h">
+<area shape="rect" id="node1" title="Interfaces used as communication between user and software." alt="" coords="5,5,140,32"/>
+<area shape="rect" id="node2" href="$fleet_8h.html" title="Player representation class." alt="" coords="44,80,101,107"/>
+<area shape="rect" id="node3" href="$header_8h.html" title="Main header with included libraries." alt="" coords="70,155,142,181"/>
+</map>

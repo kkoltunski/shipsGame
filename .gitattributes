@@ -1,0 +1,5 @@
+#Because documentation is HTML i have to manualy change my repo language#
+#########################################################################
+
+* linguist-vendored
+*.cpp linguist-vendored=false

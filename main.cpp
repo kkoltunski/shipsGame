@@ -16,7 +16,7 @@ int main(){
 			UI.showAvailableShipsInConsole();
 			UI.setShipTypeRequest();
 			UI.shipPlacement();
-			if(!UI.pointsControll()) {
+			if(!UI.pointsControll()){
 				if(++counter < 2) UI.reloadReferences(BoardAddressTab[counter], PlayerAddressTab[counter]);
 			}
 		}

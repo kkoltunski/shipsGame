@@ -1,6 +1,6 @@
 <map id="shipyard.h" name="shipyard.h">
-<area shape="rect" id="node1" title="Polimorphic alternative for switch..case instruction used in ship placement process." alt="" coords="33,5,116,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,155,77,181"/>
-<area shape="rect" id="node3" href="$field_8h.html" title="Single field representation class in whole board." alt="" coords="47,80,103,107"/>
-<area shape="rect" id="node4" href="$settings_8h.html" title="Header with settings variables and magic numbers used as parameters in software." alt="" coords="127,80,206,107"/>
+<area shape="rect" id="node1" title="Polimorphic alternative for switch..case instruction used in ship placement process." alt="" coords="45,5,128,32"/>
+<area shape="rect" id="node2" href="$field_8h.html" title="Single field representation class in whole board." alt="" coords="13,80,69,107"/>
+<area shape="rect" id="node4" href="$settings_8h.html" title="Header with settings variables and magic numbers used as parameters in software." alt="" coords="94,80,173,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,155,77,181"/>
 </map>

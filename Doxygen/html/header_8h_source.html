@@ -69,49 +69,44 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef HEADER_H</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define HEADER_H</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;iomanip&gt;</span> </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="user_data_interface_8h.html">userDataInterface.h</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="settings_8h.html">settings.h</a>&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="field_8h.html">field.h</a>&quot;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="board_8h.html">board.h</a>&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fleet_8h.html">fleet.h</a>&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="shipyard_8h.html">shipyard.h</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">using</span> std::cout;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">using</span> std::cin;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using</span> std::endl;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">using</span> std::vector;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//Boards for players</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<a class="code" href="classboard.html">board</a> Board1;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<a class="code" href="classboard.html">board</a> Board2 = Board1;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<a class="code" href="classboard.html">board</a> *BoardAddressTab [2] {&amp;Board1, &amp;Board2};              <span class="comment">//These addresses will be used in first step - filling boards</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//Tboard Board1, Board2;                                    //This is correct way to create boards, above is version to run copy construcor</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//Players creation</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<a class="code" href="classfleet.html">fleet</a> Player1(<a class="code" href="settings_8h.html#ac66ae599cbe4f255ae3fbd4d64ae5d11">fleetPoints</a>), Player2(<a class="code" href="settings_8h.html#ac66ae599cbe4f255ae3fbd4d64ae5d11">fleetPoints</a>);           <span class="comment">//In the future, points can be used for dificult level</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<a class="code" href="classfleet.html">fleet</a> *PlayerAddressTab[2] {&amp;Player1, &amp;Player2};</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//Player2 = Player1;                                        //This is how Tfleet::operator= could run</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="header_8h.html#a75adb1cee7d7d878c442a82ab2d04785">   46</a></span>&#160;std::ostream&amp; <a class="code" href="header_8h.html#a75adb1cee7d7d878c442a82ab2d04785">operator&lt;&lt;</a>(std::ostream&amp; _inStream, <a class="code" href="classfield.html">field</a> &amp;_inField){</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> _inStream &lt;&lt; _inField;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif // !HEADER_H</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fleet_8h.html">fleet.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">using</span> std::cout;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">using</span> std::cin;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">using</span> std::endl;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">using</span> std::vector;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//Boards for players</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<a class="code" href="classboard.html">board</a> Board1;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<a class="code" href="classboard.html">board</a> Board2 = Board1;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<a class="code" href="classboard.html">board</a> *BoardAddressTab [2] {&amp;Board1, &amp;Board2};              <span class="comment">//These addresses will be used in first step - filling boards</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//Tboard Board1, Board2;                                    //This is correct way to create boards, above is version to run copy construcor</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//Players creation</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<a class="code" href="classfleet.html">fleet</a> Player1(fleetPoints), Player2(fleetPoints);           <span class="comment">//In the future, points can be used for dificult level</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<a class="code" href="classfleet.html">fleet</a> *PlayerAddressTab[2] {&amp;Player1, &amp;Player2};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//Player2 = Player1;                                        //This is how Tfleet::operator= could run</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="header_8h.html#a3b5ca5bd74b08c5bcf3486d92fbfe226">   37</a></span>&#160;std::ostream&amp; <a class="code" href="header_8h.html#a3b5ca5bd74b08c5bcf3486d92fbfe226">operator&lt;&lt;</a>(std::ostream&amp; _inStream, <span class="keyword">const</span> <a class="code" href="classfield.html">field</a> &amp;_inField){</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    _inStream &lt;&lt; <span class="stringliteral">&quot;Field address = &quot;</span> &lt;&lt; _inField.pToShip &lt;&lt; <span class="stringliteral">&quot;is &quot;</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    _inStream &lt;&lt; (_inField.occupiedByShip ? <span class="stringliteral">&quot;occupied in &quot;</span> : <span class="stringliteral">&quot;not occupied.\n&quot;</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span>(_inField.shipDirection) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        _inStream &lt;&lt; <span class="stringliteral">&quot;vertical direction.\n&quot;</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        _inStream &lt;&lt; <span class="stringliteral">&quot;horizontal direction.\n&quot;</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> _inStream;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif // !HEADER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="asettings_8h_html"><div class="ttname"><a href="settings_8h.html">settings.h</a></div><div class="ttdoc">Header with settings variables and magic numbers used as parameters in software.</div></div>
-<div class="ttc" id="aclassfleet_html"><div class="ttname"><a href="classfleet.html">fleet</a></div><div class="ttdef"><b>Definition:</b> fleet.h:23</div></div>
+<div class="ttc" id="aclassfleet_html"><div class="ttname"><a href="classfleet.html">fleet</a></div><div class="ttdef"><b>Definition:</b> fleet.h:22</div></div>
 <div class="ttc" id="aclassfield_html"><div class="ttname"><a href="classfield.html">field</a></div><div class="ttdef"><b>Definition:</b> field.h:19</div></div>
-<div class="ttc" id="auser_data_interface_8h_html"><div class="ttname"><a href="user_data_interface_8h.html">userDataInterface.h</a></div><div class="ttdoc">Interfaces used as communication between user and software.</div></div>
-<div class="ttc" id="aclassboard_html"><div class="ttname"><a href="classboard.html">board</a></div><div class="ttdef"><b>Definition:</b> board.h:33</div></div>
-<div class="ttc" id="aheader_8h_html_a75adb1cee7d7d878c442a82ab2d04785"><div class="ttname"><a href="header_8h.html#a75adb1cee7d7d878c442a82ab2d04785">operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;_inStream, field &amp;_inField)</div><div class="ttdoc">Operator to make possible showing field information.</div><div class="ttdef"><b>Definition:</b> header.h:46</div></div>
-<div class="ttc" id="asettings_8h_html_ac66ae599cbe4f255ae3fbd4d64ae5d11"><div class="ttname"><a href="settings_8h.html#ac66ae599cbe4f255ae3fbd4d64ae5d11">fleetPoints</a></div><div class="ttdeci">constexpr int fleetPoints</div><div class="ttdoc">Player points.</div><div class="ttdef"><b>Definition:</b> settings.h:18</div></div>
-<div class="ttc" id="afield_8h_html"><div class="ttname"><a href="field_8h.html">field.h</a></div><div class="ttdoc">Single field representation class in whole board.</div></div>
-<div class="ttc" id="ashipyard_8h_html"><div class="ttname"><a href="shipyard_8h.html">shipyard.h</a></div><div class="ttdoc">Polimorphic alternative for switch..case instruction used in ship placement process.</div></div>
-<div class="ttc" id="aboard_8h_html"><div class="ttname"><a href="board_8h.html">board.h</a></div><div class="ttdoc">Board for ship placement.</div></div>
+<div class="ttc" id="aclassboard_html"><div class="ttname"><a href="classboard.html">board</a></div><div class="ttdef"><b>Definition:</b> board.h:32</div></div>
+<div class="ttc" id="aheader_8h_html_a3b5ca5bd74b08c5bcf3486d92fbfe226"><div class="ttname"><a href="header_8h.html#a3b5ca5bd74b08c5bcf3486d92fbfe226">operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;_inStream, const field &amp;_inField)</div><div class="ttdoc">Operator to make possible showing field information.</div><div class="ttdef"><b>Definition:</b> header.h:37</div></div>
 <div class="ttc" id="afleet_8h_html"><div class="ttname"><a href="fleet_8h.html">fleet.h</a></div><div class="ttdoc">Player representation class.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

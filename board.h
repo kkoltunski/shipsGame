@@ -9,13 +9,10 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-#include <iostream>
 #include <iomanip>
-#include <algorithm>
+#include <algorithm> 
 #include <vector>
 #include <sstream>
-#include "settings.h"
-#include "field.h"
 #include "shipyard.h"
 
 using std::cout;

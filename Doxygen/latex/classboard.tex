@@ -16,17 +16,19 @@ virtual \mbox{\hyperlink{classboard_a978427d3593354f5d735a766585a2ad2}{$\sim$boa
 void \mbox{\hyperlink{classboard_a7d277b66cc42c7b0a72486d32cd06fcc}{show\+Ships\+Addresses}} () const noexcept(true)
 \begin{DoxyCompactList}\small\item\em Show created ship addresses. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classboard_a06cbe5ec463e3be868eab1b3265b9c46}{draw\+Board}} () const noexcept(true)
-\begin{DoxyCompactList}\small\item\em Show board state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Show board state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classboard}{board}} \& \mbox{\hyperlink{classboard_a593a5d95198c2d5b0884f69d072c3f89}{operator=}} (\mbox{\hyperlink{classboard}{board}} \&)
+\begin{DoxyCompactList}\small\item\em Operator =;. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classboard_adc10fae41d02b04cf4bbd35544fd2ecd}\label{classboard_adc10fae41d02b04cf4bbd35544fd2ecd}} 
-class \mbox{\hyperlink{classboard_adc10fae41d02b04cf4bbd35544fd2ecd}{i\+Board}}
+\mbox{\Hypertarget{classboard_aabc6ac27dc8715919f9541dae499871b}\label{classboard_aabc6ac27dc8715919f9541dae499871b}} 
+struct \mbox{\hyperlink{classboard_aabc6ac27dc8715919f9541dae499871b}{i\+Board}}
 \begin{DoxyCompactList}\small\item\em Board and interface communication. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Board is class which allow to place ships. It include (\mbox{\hyperlink{settings_8h_a38e5db0736327d249b790fa07a6467f6}{board\+Rows}} x \mbox{\hyperlink{settings_8h_a31f50537a91d54201e19fa1216d03d87}{board\+Columns}}) field addresses. It stored each ship address which is placed on it. 
+Board is class which allow to place ships. It include (board\+Rows x board\+Columns) field addresses. It stored each ship address which is placed on it. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classboard_a2a97f34e7c9ed8ace6a2508bb2c6e2a2}\label{classboard_a2a97f34e7c9ed8ace6a2508bb2c6e2a2}} 
@@ -43,7 +45,7 @@ Trying to allocate necessary memory for board. If allocation is successed then a
 \index{board@{board}!board@{board}}
 \index{board@{board}!board@{board}}
 \doxysubsubsection{\texorpdfstring{board()}{board()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily board\+::board (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classboard}{board}} \&}]{original\+Board }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily board\+::board (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classboard}{board}} \&}]{\+\_\+original\+Board }\end{DoxyParamCaption})}
 
 
 
@@ -77,7 +79,22 @@ It dealocate memory which was allocated for ships () and fields(alocated by \mbo
 
 Show board state. 
 
-Method used for showing players boards. Method is also usefull while commissioning and software maintanence. \mbox{\Hypertarget{classboard_a7d277b66cc42c7b0a72486d32cd06fcc}\label{classboard_a7d277b66cc42c7b0a72486d32cd06fcc}} 
+Method used for showing players boards. Method is also usefull while commissioning and software maintanence. \mbox{\Hypertarget{classboard_a593a5d95198c2d5b0884f69d072c3f89}\label{classboard_a593a5d95198c2d5b0884f69d072c3f89}} 
+\index{board@{board}!operator=@{operator=}}
+\index{operator=@{operator=}!board@{board}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classboard}{board}} \& board\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classboard}{board}} \&}]{\+\_\+orginal\+Board }\end{DoxyParamCaption})}
+
+
+
+Operator =;. 
+
+The same what copy constructor but parameter ocupation from fields in original board are copied to new created board. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em const} & board\& original\+Board Reference to original board. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classboard_a7d277b66cc42c7b0a72486d32cd06fcc}\label{classboard_a7d277b66cc42c7b0a72486d32cd06fcc}} 
 \index{board@{board}!showShipsAddresses@{showShipsAddresses}}
 \index{showShipsAddresses@{showShipsAddresses}!board@{board}}
 \doxysubsubsection{\texorpdfstring{showShipsAddresses()}{showShipsAddresses()}}

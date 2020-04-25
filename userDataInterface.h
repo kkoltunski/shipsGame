@@ -11,7 +11,6 @@
 
 #include "board.h"
 #include "fleet.h"
-#include "shipyard.h"
 #include "errorsHandling.h"
 
 class fleet;

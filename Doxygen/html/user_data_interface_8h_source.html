@@ -71,192 +71,206 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="board_8h.html">board.h</a>&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fleet_8h.html">fleet.h</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="shipyard_8h.html">shipyard.h</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="errors_handling_8h.html">errorsHandling.h</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">class </span><a class="code" href="classfleet.html">fleet</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class </span><a class="code" href="classboard.html">board</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structi_initializer.html">   23</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structi_initializer.html">iInitializer</a></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structi_initializer.html#a866221cb9e99b8acc0264586f640b90b">   27</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structi_initializer.html#a866221cb9e99b8acc0264586f640b90b">initialized</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structi_initializer.html#a2afaf8bec0acb05bdec75a8adb1d79a1">   30</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structi_initializer.html#a2afaf8bec0acb05bdec75a8adb1d79a1">initialize</a>() noexcept(true) = 0;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;template&lt;typename T&gt;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="structi_assigner.html">   37</a></span>&#160;struct <a class="code" href="structi_assigner.html">iAssigner</a></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structi_assigner.html#a901a9a79f429452cfa15f838086b040e">   41</a></span>&#160;    <span class="keyword">const</span> T* <a class="code" href="structi_assigner.html#a901a9a79f429452cfa15f838086b040e">objectAddress</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structi_assigner.html#ae5eb1932ed7bab1fac99da1f8f3fa2e5">   47</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structi_assigner.html#ae5eb1932ed7bab1fac99da1f8f3fa2e5">addressAssigment</a>(T* _in) noexcept(<span class="keyword">true</span>) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        objectAddress = _in;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="structi_board.html">   55</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structi_board.html">iBoard</a> : <span class="keyword">public</span> <a class="code" href="structi_initializer.html">iInitializer</a>, <span class="keyword">public</span> <a class="code" href="structi_assigner.html">iAssigner</a>&lt;board&gt;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> convertRelativePositionCasesSize() noexcept(<span class="keyword">true</span>) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; x : userTypedPosition) x = toupper(x);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> calculateRowAbsoluteValue() noexcept(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> calculateColumnAbsoluteValue() noexcept(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">bool</span> isTypedPositionValid() noexcept(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">string</span> rowsDefinitions{ <span class="stringliteral">&quot;123456789&quot;</span> };</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">string</span> columnsDefinitions{};</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">string</span> userTypedPosition;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">int</span> absoluteRow;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">int</span> absoluteColumn;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">bool</span> Dir;                                       <span class="comment">//1 - vertical, 0 - horizontal  </span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="structi_board.html#a5b89218f67acccb52dd38f67ff92585b">   78</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">string</span>&amp; <a class="code" href="structi_board.html#a5b89218f67acccb52dd38f67ff92585b">setUserTypedPosition</a>() noexcept(true) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> userTypedPosition;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structi_board.html#aad09a27cee06a55b5ccaa889198cd892">   82</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structi_board.html#aad09a27cee06a55b5ccaa889198cd892">makeColumnsDefinition</a>() noexcept(true) {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; <a class="code" href="settings_8h.html#a31f50537a91d54201e19fa1216d03d87">boardColumns</a>; x++) columnsDefinitions += <span class="charliteral">&#39;A&#39;</span> + x;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="structi_board.html#a31ede88c5342eb7366b02893365f1650">   86</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="structi_board.html#a31ede88c5342eb7366b02893365f1650">returnTypedDirection</a>() const noexcept(false) {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> Dir;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="structi_board.html#a2fd2ce56fd70f1266589b8db877ebc48">   90</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="structi_board.html#a2fd2ce56fd70f1266589b8db877ebc48">returnAbsoluteRow</a>() const noexcept(true) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">return</span> absoluteRow;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="structi_board.html#a8979e826bdf7f74910b4bb69f1730f83">   94</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="structi_board.html#a8979e826bdf7f74910b4bb69f1730f83">returnAbsoluteColumn</a>() const noexcept(true) {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">return</span> absoluteColumn;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> addShip(<a class="code" href="classship.html">ship</a>* _pToShip) noexcept(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">bool</span> isUserTypeCorrect() noexcept(false);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> getDirection() noexcept(true);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">bool</span> getFieldOccupation(<span class="keywordtype">short</span> _row = 0, <span class="keywordtype">short</span> _column = 0) const noexcept(true);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="classfield.html">field</a>* getFieldAddress() const noexcept(true);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="structi_board.html#a871f8828b739f6e3262f6acceb0baca5">  109</a></span>&#160;    virtual inline <span class="keywordtype">void</span> <a class="code" href="structi_initializer.html#a2afaf8bec0acb05bdec75a8adb1d79a1">initialize</a>() noexcept(true)<span class="keyword"> override </span>{</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        userTypedPosition = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        absoluteRow = 0;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        absoluteColumn = 0;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        Dir = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="structi_initializer.html#a866221cb9e99b8acc0264586f640b90b">initialized</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;};</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="structi_player.html">  121</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structi_player.html">iPlayer</a> : <span class="keyword">public</span> <a class="code" href="structi_initializer.html">iInitializer</a>, <span class="keyword">public</span> <a class="code" href="structi_assigner.html">iAssigner</a>&lt;fleet&gt;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;{</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">string</span> returnPlayerName() <span class="keyword">const</span> noexcept(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">void</span> updatePoints(<span class="keywordtype">short</span> _pointToUpdate) noexcept(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">int</span> returnPoints() <span class="keyword">const</span> noexcept(<span class="keyword">true</span>); </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="structi_player.html#a8276d0a22450c32aa4ffaaf94549f915">  132</a></span>&#160;    <span class="keyword">virtual</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structi_player.html#a8276d0a22450c32aa4ffaaf94549f915">initialize</a>() noexcept(true)<span class="keyword"> override </span>{</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <a class="code" href="structi_initializer.html#a866221cb9e99b8acc0264586f640b90b">initialized</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;};</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="structi_ship.html">  140</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structi_ship.html">iShip</a> : <span class="keyword">public</span> <a class="code" href="structi_initializer.html">iInitializer</a></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;{</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">void</span> calculateHorizontalPossibilities(<span class="keyword">const</span> <a class="code" href="structi_board.html">iBoard</a>&amp;);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">void</span> calculateVerticalPossibilities(<span class="keyword">const</span> <a class="code" href="structi_board.html">iBoard</a>&amp;);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">void</span> adjustPossibleShipValue(<span class="keywordtype">short</span> _points) noexcept(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keyword">mutable</span> <span class="keywordtype">short</span> <a class="code" href="settings_8h.html#a9a8aa292716a0bf27656fbbd80080aa1">shipType</a>;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">short</span> possibleShips;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">short</span> horizontalDistanceToBorder;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">short</span> verticalDistanceToBorder;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="structi_ship.html#a7997066c9b74f55f54ee703a4816df74">  157</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">short</span> <a class="code" href="structi_ship.html#a7997066c9b74f55f54ee703a4816df74">returnPossibleShips</a>() noexcept(true) {</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">return</span> possibleShips;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
-<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="structi_ship.html#ae28b4ddd6944d092032db2338571b7a3">  161</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">short</span> <a class="code" href="structi_ship.html#ae28b4ddd6944d092032db2338571b7a3">returnChoosenShipType</a>() noexcept(true) {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="settings_8h.html#a9a8aa292716a0bf27656fbbd80080aa1">shipType</a>;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">void</span> calculatePossibleShips(<span class="keywordtype">bool</span>, <span class="keyword">const</span> <a class="code" href="structi_board.html">iBoard</a>&amp;, <span class="keyword">const</span> <a class="code" href="structi_player.html">iPlayer</a>&amp;) noexcept(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">void</span> getUserTypedShip() noexcept(true);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="classship.html">ship</a>* shipyard(const <a class="code" href="structi_board.html">iBoard</a>&amp; _boardInterface) noexcept(true);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="structi_ship.html#a7f2ec75337d01f89bfb0a9c918bb45eb">  172</a></span>&#160;    virtual inline <span class="keywordtype">void</span> <a class="code" href="structi_initializer.html#a2afaf8bec0acb05bdec75a8adb1d79a1">initialize</a>() noexcept(true)<span class="keyword"> override </span>{</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <a class="code" href="settings_8h.html#a9a8aa292716a0bf27656fbbd80080aa1">shipType</a> = 0;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        possibleShips = 0;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        horizontalDistanceToBorder = 0;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        verticalDistanceToBorder = 0;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <a class="code" href="structi_initializer.html#a866221cb9e99b8acc0264586f640b90b">initialized</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;};</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="structuser_data_interface.html">  181</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structuser_data_interface.html">userDataInterface</a> : <span class="keyword">public</span> <a class="code" href="structi_initializer.html">iInitializer</a></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;{</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">void</span> <span class="keyword">inline</span> getUserType() noexcept(<span class="keyword">true</span>) {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        getline(std::cin, boardInterface.setUserTypedPosition(), <span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="structi_board.html">iBoard</a> boardInterface;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="structi_player.html">iPlayer</a> playerInterface;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="structi_ship.html">iShip</a> shipInterface;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <a class="code" href="structuser_data_interface.html">userDataInterface</a>(<a class="code" href="classboard.html">board</a>* _board, <a class="code" href="classfleet.html">fleet</a>* _player);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="structuser_data_interface.html#a82bb58b82623bae6e13d1336313d300f">  201</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structuser_data_interface.html#a82bb58b82623bae6e13d1336313d300f">setUserTypedPositionRequest</a>() const noexcept(true) {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        cout &lt;&lt; endl &lt;&lt; playerInterface.<a class="code" href="structi_player.html#a7a464ecca24b48bd05afa1a1fdeacdc0">returnPlayerName</a>() &lt;&lt; <span class="stringliteral">&quot;\nType your position (ex. A1) : &quot;</span>;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
-<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="structuser_data_interface.html#af24ca8f12dc2eda36b66b3da27efbb5c">  205</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structuser_data_interface.html#af24ca8f12dc2eda36b66b3da27efbb5c">setShipTypeRequest</a>() noexcept(true) {</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        shipInterface.<a class="code" href="structi_ship.html#aeed0142c9fb2b9a01c4cf52fe0a44cc9">getUserTypedShip</a>();</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    }</div>
-<div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="structuser_data_interface.html#af515833dfdc90d07616ad0c7308364fc">  209</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="structuser_data_interface.html#af515833dfdc90d07616ad0c7308364fc">isOccupied</a>() noexcept(true) {</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordflow">return</span> boardInterface.<a class="code" href="structi_board.html#ac0a1889aecad95686cc439435a27738e">getFieldOccupation</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="errors_handling_8h.html">errorsHandling.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">class </span><a class="code" href="classfleet.html">fleet</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">class </span><a class="code" href="classboard.html">board</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structi_initializer.html">   22</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structi_initializer.html">iInitializer</a></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structi_initializer.html#a866221cb9e99b8acc0264586f640b90b">   26</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structi_initializer.html#a866221cb9e99b8acc0264586f640b90b">initialized</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structi_initializer.html#a2afaf8bec0acb05bdec75a8adb1d79a1">   29</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structi_initializer.html#a2afaf8bec0acb05bdec75a8adb1d79a1">initialize</a>() noexcept(true) = 0;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;template&lt;typename T&gt;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structi_assigner.html">   36</a></span>&#160;struct <a class="code" href="structi_assigner.html">iAssigner</a></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="structi_assigner.html#a901a9a79f429452cfa15f838086b040e">   40</a></span>&#160;    <span class="keyword">const</span> T* <a class="code" href="structi_assigner.html#a901a9a79f429452cfa15f838086b040e">objectAddress</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="structi_assigner.html#ae5eb1932ed7bab1fac99da1f8f3fa2e5">   46</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structi_assigner.html#ae5eb1932ed7bab1fac99da1f8f3fa2e5">addressAssigment</a>(T* _in) noexcept(<span class="keyword">true</span>) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        objectAddress = _in;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structi_board.html">   54</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structi_board.html">iBoard</a> : <span class="keyword">public</span> <a class="code" href="structi_initializer.html">iInitializer</a>, <span class="keyword">public</span> <a class="code" href="structi_assigner.html">iAssigner</a>&lt;board&gt;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="structi_board.html">iBoard</a>() {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="structi_initializer.html#a2afaf8bec0acb05bdec75a8adb1d79a1">initialize</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> convertRelativePositionCasesSize() noexcept(<span class="keyword">true</span>) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; x : userTypedPosition) x = toupper(x);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> calculateRowAbsoluteValue() noexcept(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> calculateColumnAbsoluteValue() noexcept(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">bool</span> isTypedPositionValid() noexcept(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">string</span> rowsDefinitions{ <span class="stringliteral">&quot;123456789&quot;</span> };</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">string</span> columnsDefinitions{};</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">string</span> userTypedPosition;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">int</span> absoluteRow;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">int</span> absoluteColumn;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">bool</span> Dir;                                       <span class="comment">//1 - vertical, 0 - horizontal  </span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="structi_board.html#a5b89218f67acccb52dd38f67ff92585b">   80</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">string</span>&amp; <a class="code" href="structi_board.html#a5b89218f67acccb52dd38f67ff92585b">setUserTypedPosition</a>() noexcept(true) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> userTypedPosition;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="structi_board.html#aad09a27cee06a55b5ccaa889198cd892">   84</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structi_board.html#aad09a27cee06a55b5ccaa889198cd892">makeColumnsDefinition</a>() noexcept(true) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; boardColumns; x++) columnsDefinitions += <span class="charliteral">&#39;A&#39;</span> + x;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="structi_board.html#a31ede88c5342eb7366b02893365f1650">   88</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="structi_board.html#a31ede88c5342eb7366b02893365f1650">returnTypedDirection</a>() const noexcept(false) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> Dir;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="structi_board.html#a2fd2ce56fd70f1266589b8db877ebc48">   92</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="structi_board.html#a2fd2ce56fd70f1266589b8db877ebc48">returnAbsoluteRow</a>() const noexcept(true) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span> absoluteRow;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="structi_board.html#a8979e826bdf7f74910b4bb69f1730f83">   96</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="structi_board.html#a8979e826bdf7f74910b4bb69f1730f83">returnAbsoluteColumn</a>() const noexcept(true) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">return</span> absoluteColumn;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> addShip(<a class="code" href="classship.html">ship</a>* _pToShip) noexcept(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">bool</span> isUserTypeCorrect() noexcept(false);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">void</span> getDirection() noexcept(true);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">bool</span> getFieldOccupation(<span class="keywordtype">short</span> _row = 0, <span class="keywordtype">short</span> _column = 0) const noexcept(true);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="classfield.html">field</a>* getFieldAddress() const noexcept(true);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="structi_board.html#a871f8828b739f6e3262f6acceb0baca5">  111</a></span>&#160;    virtual inline <span class="keywordtype">void</span> <a class="code" href="structi_initializer.html#a2afaf8bec0acb05bdec75a8adb1d79a1">initialize</a>() noexcept(true)<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        userTypedPosition = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        absoluteRow = 0;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        absoluteColumn = 0;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        Dir = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="structi_initializer.html#a866221cb9e99b8acc0264586f640b90b">initialized</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="structi_board.html#aa0e4b2260d283199426d1f9706ff421d">  120</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classuser_data_interface.html">userDataInterface</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;};</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="structi_player.html">  126</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structi_player.html">iPlayer</a> : <span class="keyword">public</span> <a class="code" href="structi_initializer.html">iInitializer</a>, <span class="keyword">public</span> <a class="code" href="structi_assigner.html">iAssigner</a>&lt;fleet&gt;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;{</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="structi_player.html">iPlayer</a>() {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="structi_initializer.html#a2afaf8bec0acb05bdec75a8adb1d79a1">initialize</a>();</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">string</span> returnPlayerName() <span class="keyword">const</span> noexcept(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">void</span> updatePoints(<span class="keywordtype">short</span> _pointToUpdate) noexcept(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">int</span> returnPoints() <span class="keyword">const</span> noexcept(<span class="keyword">true</span>); </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="structi_player.html#a8276d0a22450c32aa4ffaaf94549f915">  143</a></span>&#160;    <span class="keyword">virtual</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structi_player.html#a8276d0a22450c32aa4ffaaf94549f915">initialize</a>() noexcept(true)<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <a class="code" href="structi_initializer.html#a866221cb9e99b8acc0264586f640b90b">initialized</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="structi_player.html#aa0e4b2260d283199426d1f9706ff421d">  148</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classuser_data_interface.html">userDataInterface</a>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;};</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="structi_ship.html">  154</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structi_ship.html">iShip</a> : <span class="keyword">public</span> <a class="code" href="structi_initializer.html">iInitializer</a></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;{</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <a class="code" href="structi_ship.html">iShip</a>() {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <a class="code" href="structi_initializer.html#a2afaf8bec0acb05bdec75a8adb1d79a1">initialize</a>();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">void</span> calculateHorizontalPossibilities(<span class="keyword">const</span> <a class="code" href="structi_board.html">iBoard</a>&amp;);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">void</span> calculateVerticalPossibilities(<span class="keyword">const</span> <a class="code" href="structi_board.html">iBoard</a>&amp;);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordtype">void</span> adjustPossibleShipValue(<span class="keywordtype">short</span> _points) noexcept(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keyword">mutable</span> <span class="keywordtype">short</span> <a class="code" href="settings_8h.html#a9a8aa292716a0bf27656fbbd80080aa1">shipType</a>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordtype">short</span> possibleShips;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">short</span> horizontalDistanceToBorder;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordtype">short</span> verticalDistanceToBorder;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="structi_ship.html#a7997066c9b74f55f54ee703a4816df74">  175</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">short</span> <a class="code" href="structi_ship.html#a7997066c9b74f55f54ee703a4816df74">returnPossibleShips</a>() noexcept(true) {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">return</span> possibleShips;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    }</div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="structi_ship.html#ae28b4ddd6944d092032db2338571b7a3">  179</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">short</span> <a class="code" href="structi_ship.html#ae28b4ddd6944d092032db2338571b7a3">returnChoosenShipType</a>() noexcept(true) {</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="settings_8h.html#a9a8aa292716a0bf27656fbbd80080aa1">shipType</a>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordtype">void</span> calculatePossibleShips(<span class="keywordtype">bool</span>, <span class="keyword">const</span> <a class="code" href="structi_board.html">iBoard</a>&amp;, <span class="keyword">const</span> <a class="code" href="structi_player.html">iPlayer</a>&amp;) noexcept(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">void</span> getUserTypedShip() noexcept(true);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <a class="code" href="classship.html">ship</a>* shipyard(const <a class="code" href="structi_board.html">iBoard</a>&amp; _boardInterface) noexcept(true);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="structi_ship.html#a7f2ec75337d01f89bfb0a9c918bb45eb">  190</a></span>&#160;    virtual inline <span class="keywordtype">void</span> <a class="code" href="structi_initializer.html#a2afaf8bec0acb05bdec75a8adb1d79a1">initialize</a>() noexcept(true)<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <a class="code" href="settings_8h.html#a9a8aa292716a0bf27656fbbd80080aa1">shipType</a> = 0;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        possibleShips = 0;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        horizontalDistanceToBorder = 0;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        verticalDistanceToBorder = 0;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <a class="code" href="structi_initializer.html#a866221cb9e99b8acc0264586f640b90b">initialized</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="structi_ship.html#aa0e4b2260d283199426d1f9706ff421d">  199</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classuser_data_interface.html">userDataInterface</a>;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;};</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="classuser_data_interface.html">  202</a></span>&#160;<span class="keyword">class </span><a class="code" href="classuser_data_interface.html">userDataInterface</a> : <span class="keyword">public</span> <a class="code" href="structi_initializer.html">iInitializer</a></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;{</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordtype">void</span> <span class="keyword">inline</span> getUserType() noexcept(<span class="keyword">true</span>) {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        getline(std::cin, boardInterface.setUserTypedPosition(), <span class="charliteral">&#39;\n&#39;</span>);</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    }</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordtype">bool</span> manageUserTypedPosition() noexcept(false);</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordtype">void</span> possibleShipsCalculation();</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordtype">void</span> showAvailableShipsInConsole() noexcept(false);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordtype">void</span> shipPlacement() noexcept(false);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="comment">//Points managment.</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordtype">bool</span> pointsControll() noexcept(true);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordtype">void</span> reloadReferences(<a class="code" href="classboard.html">board</a>* _board, <a class="code" href="classfleet.html">fleet</a>* _player) noexcept(true);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    virtual <span class="keywordtype">void</span> <a class="code" href="structi_initializer.html#a2afaf8bec0acb05bdec75a8adb1d79a1">initialize</a>() noexcept(true) override;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;};</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="preprocessor">#endif // !USERDATAINTERFACE_H</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <a class="code" href="structi_board.html">iBoard</a> boardInterface;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <a class="code" href="structi_player.html">iPlayer</a> playerInterface;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <a class="code" href="structi_ship.html">iShip</a> shipInterface;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <a class="code" href="classuser_data_interface.html">userDataInterface</a>(<a class="code" href="classboard.html">board</a>* _board, <a class="code" href="classfleet.html">fleet</a>* _player);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="classuser_data_interface.html#a82bb58b82623bae6e13d1336313d300f">  222</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classuser_data_interface.html#a82bb58b82623bae6e13d1336313d300f">setUserTypedPositionRequest</a>() const noexcept(true) {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        cout &lt;&lt; endl &lt;&lt; playerInterface.<a class="code" href="structi_player.html#a7a464ecca24b48bd05afa1a1fdeacdc0">returnPlayerName</a>() &lt;&lt; <span class="stringliteral">&quot;\nType your position (ex. A1) : &quot;</span>;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    }</div>
+<div class="line"><a name="l00226"></a><span class="lineno"><a class="line" href="classuser_data_interface.html#af24ca8f12dc2eda36b66b3da27efbb5c">  226</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classuser_data_interface.html#af24ca8f12dc2eda36b66b3da27efbb5c">setShipTypeRequest</a>() noexcept(true) {</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        shipInterface.<a class="code" href="structi_ship.html#aeed0142c9fb2b9a01c4cf52fe0a44cc9">getUserTypedShip</a>();</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    }</div>
+<div class="line"><a name="l00230"></a><span class="lineno"><a class="line" href="classuser_data_interface.html#af515833dfdc90d07616ad0c7308364fc">  230</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classuser_data_interface.html#af515833dfdc90d07616ad0c7308364fc">isOccupied</a>() noexcept(true) {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keywordflow">return</span> boardInterface.<a class="code" href="structi_board.html#ac0a1889aecad95686cc439435a27738e">getFieldOccupation</a>();</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    }</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordtype">bool</span> manageUserTypedPosition() noexcept(false);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordtype">void</span> possibleShipsCalculation();</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordtype">void</span> showAvailableShipsInConsole() noexcept(false);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordtype">void</span> shipPlacement() noexcept(false);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="comment">//Points managment.</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordtype">bool</span> pointsControll() noexcept(true);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordtype">void</span> reloadReferences(<a class="code" href="classboard.html">board</a>* _board, <a class="code" href="classfleet.html">fleet</a>* _player) noexcept(true);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    virtual <span class="keywordtype">void</span> <a class="code" href="structi_initializer.html#a2afaf8bec0acb05bdec75a8adb1d79a1">initialize</a>() noexcept(true) override;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;};</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="preprocessor">#endif // !USERDATAINTERFACE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassfleet_html"><div class="ttname"><a href="classfleet.html">fleet</a></div><div class="ttdef"><b>Definition:</b> fleet.h:23</div></div>
+<div class="ttc" id="aclassuser_data_interface_html"><div class="ttname"><a href="classuser_data_interface.html">userDataInterface</a></div><div class="ttdef"><b>Definition:</b> userDataInterface.h:203</div></div>
+<div class="ttc" id="aclassuser_data_interface_html_af515833dfdc90d07616ad0c7308364fc"><div class="ttname"><a href="classuser_data_interface.html#af515833dfdc90d07616ad0c7308364fc">userDataInterface::isOccupied</a></div><div class="ttdeci">bool isOccupied() noexcept(true)</div><div class="ttdoc">Request to iBoard interface if typed field is occupied.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:230</div></div>
+<div class="ttc" id="aclassfleet_html"><div class="ttname"><a href="classfleet.html">fleet</a></div><div class="ttdef"><b>Definition:</b> fleet.h:22</div></div>
 <div class="ttc" id="aclassfield_html"><div class="ttname"><a href="classfield.html">field</a></div><div class="ttdef"><b>Definition:</b> field.h:19</div></div>
-<div class="ttc" id="astructi_board_html"><div class="ttname"><a href="structi_board.html">iBoard</a></div><div class="ttdef"><b>Definition:</b> userDataInterface.h:56</div></div>
-<div class="ttc" id="astructi_ship_html_ae28b4ddd6944d092032db2338571b7a3"><div class="ttname"><a href="structi_ship.html#ae28b4ddd6944d092032db2338571b7a3">iShip::returnChoosenShipType</a></div><div class="ttdeci">short returnChoosenShipType() noexcept(true)</div><div class="ttdoc">Return choosen ship type.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:161</div></div>
-<div class="ttc" id="astructi_board_html_ac0a1889aecad95686cc439435a27738e"><div class="ttname"><a href="structi_board.html#ac0a1889aecad95686cc439435a27738e">iBoard::getFieldOccupation</a></div><div class="ttdeci">bool getFieldOccupation(short _row=0, short _column=0) const noexcept(true)</div><div class="ttdoc">Rate if field is occupied.</div><div class="ttdef"><b>Definition:</b> userDataInterface.cpp:94</div></div>
-<div class="ttc" id="astructi_board_html_aad09a27cee06a55b5ccaa889198cd892"><div class="ttname"><a href="structi_board.html#aad09a27cee06a55b5ccaa889198cd892">iBoard::makeColumnsDefinition</a></div><div class="ttdeci">void makeColumnsDefinition() noexcept(true)</div><div class="ttdoc">Preparing columns definitions.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:82</div></div>
-<div class="ttc" id="astructi_initializer_html"><div class="ttname"><a href="structi_initializer.html">iInitializer</a></div><div class="ttdef"><b>Definition:</b> userDataInterface.h:24</div></div>
-<div class="ttc" id="astructi_player_html"><div class="ttname"><a href="structi_player.html">iPlayer</a></div><div class="ttdef"><b>Definition:</b> userDataInterface.h:122</div></div>
-<div class="ttc" id="aclassboard_html"><div class="ttname"><a href="classboard.html">board</a></div><div class="ttdef"><b>Definition:</b> board.h:33</div></div>
-<div class="ttc" id="astructi_player_html_a8276d0a22450c32aa4ffaaf94549f915"><div class="ttname"><a href="structi_player.html#a8276d0a22450c32aa4ffaaf94549f915">iPlayer::initialize</a></div><div class="ttdeci">virtual void initialize() noexcept(true) override</div><div class="ttdoc">Method to initialize interface.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:132</div></div>
-<div class="ttc" id="astructi_assigner_html_ae5eb1932ed7bab1fac99da1f8f3fa2e5"><div class="ttname"><a href="structi_assigner.html#ae5eb1932ed7bab1fac99da1f8f3fa2e5">iAssigner::addressAssigment</a></div><div class="ttdeci">virtual void addressAssigment(T *_in) noexcept(true)</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:47</div></div>
-<div class="ttc" id="astructuser_data_interface_html_a82bb58b82623bae6e13d1336313d300f"><div class="ttname"><a href="structuser_data_interface.html#a82bb58b82623bae6e13d1336313d300f">userDataInterface::setUserTypedPositionRequest</a></div><div class="ttdeci">void setUserTypedPositionRequest() const noexcept(true)</div><div class="ttdoc">Request to type position.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:201</div></div>
-<div class="ttc" id="astructuser_data_interface_html_af24ca8f12dc2eda36b66b3da27efbb5c"><div class="ttname"><a href="structuser_data_interface.html#af24ca8f12dc2eda36b66b3da27efbb5c">userDataInterface::setShipTypeRequest</a></div><div class="ttdeci">void setShipTypeRequest() noexcept(true)</div><div class="ttdoc">Request to type ship type.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:205</div></div>
-<div class="ttc" id="astructi_ship_html_a7997066c9b74f55f54ee703a4816df74"><div class="ttname"><a href="structi_ship.html#a7997066c9b74f55f54ee703a4816df74">iShip::returnPossibleShips</a></div><div class="ttdeci">short returnPossibleShips() noexcept(true)</div><div class="ttdoc">Return possible ships value.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:157</div></div>
-<div class="ttc" id="astructi_assigner_html_a901a9a79f429452cfa15f838086b040e"><div class="ttname"><a href="structi_assigner.html#a901a9a79f429452cfa15f838086b040e">iAssigner::objectAddress</a></div><div class="ttdeci">const T * objectAddress</div><div class="ttdoc">Address of real &lt;T&gt; object.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:41</div></div>
-<div class="ttc" id="asettings_8h_html_a9a8aa292716a0bf27656fbbd80080aa1"><div class="ttname"><a href="settings_8h.html#a9a8aa292716a0bf27656fbbd80080aa1">shipType</a></div><div class="ttdeci">shipType</div><div class="ttdoc">Ships type using in shipyard.h.</div><div class="ttdef"><b>Definition:</b> settings.h:28</div></div>
-<div class="ttc" id="astructi_assigner_html"><div class="ttname"><a href="structi_assigner.html">iAssigner</a></div><div class="ttdef"><b>Definition:</b> userDataInterface.h:38</div></div>
-<div class="ttc" id="astructi_board_html_a2fd2ce56fd70f1266589b8db877ebc48"><div class="ttname"><a href="structi_board.html#a2fd2ce56fd70f1266589b8db877ebc48">iBoard::returnAbsoluteRow</a></div><div class="ttdeci">int returnAbsoluteRow() const noexcept(true)</div><div class="ttdoc">Returns calculated absolute row.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:90</div></div>
-<div class="ttc" id="astructuser_data_interface_html"><div class="ttname"><a href="structuser_data_interface.html">userDataInterface</a></div><div class="ttdef"><b>Definition:</b> userDataInterface.h:182</div></div>
-<div class="ttc" id="astructi_board_html_a8979e826bdf7f74910b4bb69f1730f83"><div class="ttname"><a href="structi_board.html#a8979e826bdf7f74910b4bb69f1730f83">iBoard::returnAbsoluteColumn</a></div><div class="ttdeci">int returnAbsoluteColumn() const noexcept(true)</div><div class="ttdoc">Returns calculated absolute column.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:94</div></div>
-<div class="ttc" id="aclassship_html"><div class="ttname"><a href="classship.html">ship</a></div><div class="ttdef"><b>Definition:</b> shipyard.h:24</div></div>
+<div class="ttc" id="astructi_board_html"><div class="ttname"><a href="structi_board.html">iBoard</a></div><div class="ttdef"><b>Definition:</b> userDataInterface.h:55</div></div>
+<div class="ttc" id="astructi_ship_html_ae28b4ddd6944d092032db2338571b7a3"><div class="ttname"><a href="structi_ship.html#ae28b4ddd6944d092032db2338571b7a3">iShip::returnChoosenShipType</a></div><div class="ttdeci">short returnChoosenShipType() noexcept(true)</div><div class="ttdoc">Return choosen ship type.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:179</div></div>
+<div class="ttc" id="astructi_board_html_ac0a1889aecad95686cc439435a27738e"><div class="ttname"><a href="structi_board.html#ac0a1889aecad95686cc439435a27738e">iBoard::getFieldOccupation</a></div><div class="ttdeci">bool getFieldOccupation(short _row=0, short _column=0) const noexcept(true)</div><div class="ttdoc">Rate if field is occupied.</div><div class="ttdef"><b>Definition:</b> userDataInterface.cpp:97</div></div>
+<div class="ttc" id="astructi_board_html_aad09a27cee06a55b5ccaa889198cd892"><div class="ttname"><a href="structi_board.html#aad09a27cee06a55b5ccaa889198cd892">iBoard::makeColumnsDefinition</a></div><div class="ttdeci">void makeColumnsDefinition() noexcept(true)</div><div class="ttdoc">Preparing columns definitions.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:84</div></div>
+<div class="ttc" id="astructi_initializer_html"><div class="ttname"><a href="structi_initializer.html">iInitializer</a></div><div class="ttdef"><b>Definition:</b> userDataInterface.h:23</div></div>
+<div class="ttc" id="astructi_player_html"><div class="ttname"><a href="structi_player.html">iPlayer</a></div><div class="ttdef"><b>Definition:</b> userDataInterface.h:127</div></div>
+<div class="ttc" id="aclassboard_html"><div class="ttname"><a href="classboard.html">board</a></div><div class="ttdef"><b>Definition:</b> board.h:32</div></div>
+<div class="ttc" id="astructi_player_html_a8276d0a22450c32aa4ffaaf94549f915"><div class="ttname"><a href="structi_player.html#a8276d0a22450c32aa4ffaaf94549f915">iPlayer::initialize</a></div><div class="ttdeci">virtual void initialize() noexcept(true) override</div><div class="ttdoc">Method to initialize interface.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:143</div></div>
+<div class="ttc" id="astructi_assigner_html_ae5eb1932ed7bab1fac99da1f8f3fa2e5"><div class="ttname"><a href="structi_assigner.html#ae5eb1932ed7bab1fac99da1f8f3fa2e5">iAssigner::addressAssigment</a></div><div class="ttdeci">virtual void addressAssigment(T *_in) noexcept(true)</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:46</div></div>
+<div class="ttc" id="astructi_ship_html_a7997066c9b74f55f54ee703a4816df74"><div class="ttname"><a href="structi_ship.html#a7997066c9b74f55f54ee703a4816df74">iShip::returnPossibleShips</a></div><div class="ttdeci">short returnPossibleShips() noexcept(true)</div><div class="ttdoc">Return possible ships value.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:175</div></div>
+<div class="ttc" id="astructi_assigner_html_a901a9a79f429452cfa15f838086b040e"><div class="ttname"><a href="structi_assigner.html#a901a9a79f429452cfa15f838086b040e">iAssigner::objectAddress</a></div><div class="ttdeci">const T * objectAddress</div><div class="ttdoc">Address of real &lt;T&gt; object.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:40</div></div>
+<div class="ttc" id="asettings_8h_html_a9a8aa292716a0bf27656fbbd80080aa1"><div class="ttname"><a href="settings_8h.html#a9a8aa292716a0bf27656fbbd80080aa1">shipType</a></div><div class="ttdeci">shipType</div><div class="ttdoc">Ships type using in shipyard.h.</div><div class="ttdef"><b>Definition:</b> settings.h:23</div></div>
+<div class="ttc" id="astructi_assigner_html"><div class="ttname"><a href="structi_assigner.html">iAssigner</a></div><div class="ttdef"><b>Definition:</b> userDataInterface.h:37</div></div>
+<div class="ttc" id="astructi_board_html_a2fd2ce56fd70f1266589b8db877ebc48"><div class="ttname"><a href="structi_board.html#a2fd2ce56fd70f1266589b8db877ebc48">iBoard::returnAbsoluteRow</a></div><div class="ttdeci">int returnAbsoluteRow() const noexcept(true)</div><div class="ttdoc">Returns calculated absolute row.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:92</div></div>
+<div class="ttc" id="astructi_board_html_a8979e826bdf7f74910b4bb69f1730f83"><div class="ttname"><a href="structi_board.html#a8979e826bdf7f74910b4bb69f1730f83">iBoard::returnAbsoluteColumn</a></div><div class="ttdeci">int returnAbsoluteColumn() const noexcept(true)</div><div class="ttdoc">Returns calculated absolute column.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:96</div></div>
+<div class="ttc" id="aclassship_html"><div class="ttname"><a href="classship.html">ship</a></div><div class="ttdef"><b>Definition:</b> shipyard.h:22</div></div>
 <div class="ttc" id="aerrors_handling_8h_html"><div class="ttname"><a href="errors_handling_8h.html">errorsHandling.h</a></div><div class="ttdoc">Exceptions management.</div></div>
-<div class="ttc" id="asettings_8h_html_a31f50537a91d54201e19fa1216d03d87"><div class="ttname"><a href="settings_8h.html#a31f50537a91d54201e19fa1216d03d87">boardColumns</a></div><div class="ttdeci">constexpr int boardColumns</div><div class="ttdoc">columns in boards</div><div class="ttdef"><b>Definition:</b> settings.h:15</div></div>
-<div class="ttc" id="ashipyard_8h_html"><div class="ttname"><a href="shipyard_8h.html">shipyard.h</a></div><div class="ttdoc">Polimorphic alternative for switch..case instruction used in ship placement process.</div></div>
-<div class="ttc" id="astructi_initializer_html_a866221cb9e99b8acc0264586f640b90b"><div class="ttname"><a href="structi_initializer.html#a866221cb9e99b8acc0264586f640b90b">iInitializer::initialized</a></div><div class="ttdeci">bool initialized</div><div class="ttdoc">Information if interface is initialized.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:27</div></div>
+<div class="ttc" id="aclassuser_data_interface_html_af24ca8f12dc2eda36b66b3da27efbb5c"><div class="ttname"><a href="classuser_data_interface.html#af24ca8f12dc2eda36b66b3da27efbb5c">userDataInterface::setShipTypeRequest</a></div><div class="ttdeci">void setShipTypeRequest() noexcept(true)</div><div class="ttdoc">Request to type ship type.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:226</div></div>
+<div class="ttc" id="astructi_initializer_html_a866221cb9e99b8acc0264586f640b90b"><div class="ttname"><a href="structi_initializer.html#a866221cb9e99b8acc0264586f640b90b">iInitializer::initialized</a></div><div class="ttdeci">bool initialized</div><div class="ttdoc">Information if interface is initialized.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:26</div></div>
+<div class="ttc" id="aclassuser_data_interface_html_a82bb58b82623bae6e13d1336313d300f"><div class="ttname"><a href="classuser_data_interface.html#a82bb58b82623bae6e13d1336313d300f">userDataInterface::setUserTypedPositionRequest</a></div><div class="ttdeci">void setUserTypedPositionRequest() const noexcept(true)</div><div class="ttdoc">Request to type position.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:222</div></div>
 <div class="ttc" id="aboard_8h_html"><div class="ttname"><a href="board_8h.html">board.h</a></div><div class="ttdoc">Board for ship placement.</div></div>
-<div class="ttc" id="astructuser_data_interface_html_af515833dfdc90d07616ad0c7308364fc"><div class="ttname"><a href="structuser_data_interface.html#af515833dfdc90d07616ad0c7308364fc">userDataInterface::isOccupied</a></div><div class="ttdeci">bool isOccupied() noexcept(true)</div><div class="ttdoc">Request to iBoard interface if typed field is occupied.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:209</div></div>
 <div class="ttc" id="astructi_initializer_html_a2afaf8bec0acb05bdec75a8adb1d79a1"><div class="ttname"><a href="structi_initializer.html#a2afaf8bec0acb05bdec75a8adb1d79a1">iInitializer::initialize</a></div><div class="ttdeci">virtual void initialize() noexcept(true)=0</div><div class="ttdoc">Abstract method to initialize interface.</div></div>
-<div class="ttc" id="astructi_board_html_a31ede88c5342eb7366b02893365f1650"><div class="ttname"><a href="structi_board.html#a31ede88c5342eb7366b02893365f1650">iBoard::returnTypedDirection</a></div><div class="ttdeci">bool returnTypedDirection() const noexcept(false)</div><div class="ttdoc">Returns information about typed direction.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:86</div></div>
-<div class="ttc" id="astructi_player_html_a7a464ecca24b48bd05afa1a1fdeacdc0"><div class="ttname"><a href="structi_player.html#a7a464ecca24b48bd05afa1a1fdeacdc0">iPlayer::returnPlayerName</a></div><div class="ttdeci">string returnPlayerName() const noexcept(true)</div><div class="ttdoc">Return player name.</div><div class="ttdef"><b>Definition:</b> userDataInterface.cpp:120</div></div>
-<div class="ttc" id="astructi_ship_html_aeed0142c9fb2b9a01c4cf52fe0a44cc9"><div class="ttname"><a href="structi_ship.html#aeed0142c9fb2b9a01c4cf52fe0a44cc9">iShip::getUserTypedShip</a></div><div class="ttdeci">void getUserTypedShip() noexcept(true)</div><div class="ttdoc">Type ship request.</div><div class="ttdef"><b>Definition:</b> userDataInterface.cpp:192</div></div>
-<div class="ttc" id="astructi_board_html_a5b89218f67acccb52dd38f67ff92585b"><div class="ttname"><a href="structi_board.html#a5b89218f67acccb52dd38f67ff92585b">iBoard::setUserTypedPosition</a></div><div class="ttdeci">string &amp; setUserTypedPosition() noexcept(true)</div><div class="ttdoc">Returns information about typed position.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:78</div></div>
-<div class="ttc" id="astructi_ship_html"><div class="ttname"><a href="structi_ship.html">iShip</a></div><div class="ttdef"><b>Definition:</b> userDataInterface.h:141</div></div>
+<div class="ttc" id="astructi_board_html_a31ede88c5342eb7366b02893365f1650"><div class="ttname"><a href="structi_board.html#a31ede88c5342eb7366b02893365f1650">iBoard::returnTypedDirection</a></div><div class="ttdeci">bool returnTypedDirection() const noexcept(false)</div><div class="ttdoc">Returns information about typed direction.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:88</div></div>
+<div class="ttc" id="astructi_player_html_a7a464ecca24b48bd05afa1a1fdeacdc0"><div class="ttname"><a href="structi_player.html#a7a464ecca24b48bd05afa1a1fdeacdc0">iPlayer::returnPlayerName</a></div><div class="ttdeci">string returnPlayerName() const noexcept(true)</div><div class="ttdoc">Return player name.</div><div class="ttdef"><b>Definition:</b> userDataInterface.cpp:123</div></div>
+<div class="ttc" id="astructi_ship_html_aeed0142c9fb2b9a01c4cf52fe0a44cc9"><div class="ttname"><a href="structi_ship.html#aeed0142c9fb2b9a01c4cf52fe0a44cc9">iShip::getUserTypedShip</a></div><div class="ttdeci">void getUserTypedShip() noexcept(true)</div><div class="ttdoc">Type ship request.</div><div class="ttdef"><b>Definition:</b> userDataInterface.cpp:195</div></div>
+<div class="ttc" id="astructi_board_html_a5b89218f67acccb52dd38f67ff92585b"><div class="ttname"><a href="structi_board.html#a5b89218f67acccb52dd38f67ff92585b">iBoard::setUserTypedPosition</a></div><div class="ttdeci">string &amp; setUserTypedPosition() noexcept(true)</div><div class="ttdoc">Returns information about typed position.</div><div class="ttdef"><b>Definition:</b> userDataInterface.h:80</div></div>
+<div class="ttc" id="astructi_ship_html"><div class="ttname"><a href="structi_ship.html">iShip</a></div><div class="ttdef"><b>Definition:</b> userDataInterface.h:155</div></div>
 <div class="ttc" id="afleet_8h_html"><div class="ttname"><a href="fleet_8h.html">fleet.h</a></div><div class="ttdoc">Player representation class.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

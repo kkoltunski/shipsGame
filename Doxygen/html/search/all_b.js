@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['objectaddress_40',['objectAddress',['../structi_assigner.html#a901a9a79f429452cfa15f838086b040e',1,'iAssigner']]],
-  ['operator_3c_3c_41',['operator&lt;&lt;',['../classfield.html#a75adb1cee7d7d878c442a82ab2d04785',1,'field::operator&lt;&lt;()'],['../header_8h.html#a75adb1cee7d7d878c442a82ab2d04785',1,'operator&lt;&lt;():&#160;header.h']]],
-  ['operator_3d_42',['operator=',['../classfield.html#a0cc7edef6fc7f3e7b97d7d8079bc4f8f',1,'field::operator=()'],['../classfleet.html#ab42a36b6f481b2ba104bf71897d2acf8',1,'fleet::operator=()']]]
+  ['placementdirection_41',['placementDirection',['../classship.html#a9d1569f0facfb96fbde1f8e60cdcc2c8',1,'ship']]],
+  ['pointscontroll_42',['pointsControll',['../classuser_data_interface.html#aa8c81f7bb3163c474c308b16e629a3e1',1,'userDataInterface']]],
+  ['positionocupied_43',['positionOcupied',['../structposition_ocupied.html',1,'']]],
+  ['possibleshipscalculation_44',['possibleShipsCalculation',['../classuser_data_interface.html#ae32dadd1496162a5133fb76364024d07',1,'userDataInterface']]]
 ];

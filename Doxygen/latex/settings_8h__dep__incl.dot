@@ -5,19 +5,14 @@ digraph "settings.h"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="settings.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Header with settings variables and magic numbers used as parameters in software."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node2 [label="board.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$board_8h.html",tooltip="Board for ship placement."];
+  Node2 [label="shipyard.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$shipyard_8h.html",tooltip="Polimorphic alternative for switch..case instruction used in ship placement process."];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node3 [label="userDataInterface.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$user_data_interface_8h.html",tooltip="Interfaces used as communication between user and software."];
+  Node3 [label="board.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$board_8h.html",tooltip="Board for ship placement."];
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node4 [label="fleet.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fleet_8h.html",tooltip="Player representation class."];
-  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="userDataInterface.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$user_data_interface_8h.html",tooltip="Interfaces used as communication between user and software."];
   Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node5 [label="header.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$header_8h.html",tooltip="Main header with included libraries."];
-  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node6 [label="shipyard.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$shipyard_8h.html",tooltip="Polimorphic alternative for switch..case instruction used in ship placement process."];
-  Node6 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="fleet.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fleet_8h.html",tooltip="Player representation class."];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="header.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$header_8h.html",tooltip="Main header with included libraries."];
 }

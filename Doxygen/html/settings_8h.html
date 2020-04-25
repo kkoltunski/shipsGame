@@ -76,12 +76,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="settings_8h__dep__incl.png" border="0" usemap="#settings_8hdep" alt=""/></div>
 <map name="settings_8hdep" id="settings_8hdep">
-<area shape="rect" title="Header with settings variables and magic numbers used as parameters in software." alt="" coords="127,5,205,32"/>
-<area shape="rect" href="board_8h.html" title="Board for ship placement." alt="" coords="35,80,100,107"/>
-<area shape="rect" href="header_8h.html" title="Main header with included libraries." alt="" coords="78,304,150,331"/>
-<area shape="rect" href="shipyard_8h.html" title="Polimorphic alternative for switch..case instruction used in ship placement process." alt="" coords="125,80,207,107"/>
-<area shape="rect" href="user_data_interface_8h.html" title="Interfaces used as communication between user and software." alt="" coords="21,155,156,181"/>
-<area shape="rect" href="fleet_8h.html" title="Player representation class." alt="" coords="85,229,143,256"/>
+<area shape="rect" title="Header with settings variables and magic numbers used as parameters in software." alt="" coords="33,5,112,32"/>
+<area shape="rect" href="shipyard_8h.html" title="Polimorphic alternative for switch..case instruction used in ship placement process." alt="" coords="31,80,114,107"/>
+<area shape="rect" href="board_8h.html" title="Board for ship placement." alt="" coords="40,155,105,181"/>
+<area shape="rect" href="user_data_interface_8h.html" title="Interfaces used as communication between user and software." alt="" coords="5,229,140,256"/>
+<area shape="rect" href="fleet_8h.html" title="Player representation class." alt="" coords="44,304,101,331"/>
+<area shape="rect" href="header_8h.html" title="Main header with included libraries." alt="" coords="37,379,109,405"/>
 </map>
 </div>
 </div>
@@ -89,6 +89,29 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:a1f6cf49231696f71fed6dce4192d9ae3"><td class="memItemLeft" align="right" valign="top"><a id="a1f6cf49231696f71fed6dce4192d9ae3"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="settings_8h.html#a1f6cf49231696f71fed6dce4192d9ae3">boardMagicNumbers</a> { <b>boardRows</b> = 10, 
+<b>boardColumns</b> = 10, 
+<b>alphabetSize</b> = 26
+ }</td></tr>
+<tr class="memdesc:a1f6cf49231696f71fed6dce4192d9ae3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boards magic numbers. <br /></td></tr>
+<tr class="separator:a1f6cf49231696f71fed6dce4192d9ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf0e70047865fecf89c109f47b60e9bd"><td class="memItemLeft" align="right" valign="top"><a id="aaf0e70047865fecf89c109f47b60e9bd"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="settings_8h.html#aaf0e70047865fecf89c109f47b60e9bd">fleetMagicNumbers</a> { <b>fleetPoints</b> = 10, 
+<b>maximumPlayerNumber</b> = 2
+ }</td></tr>
+<tr class="memdesc:aaf0e70047865fecf89c109f47b60e9bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fleets magic numbers. <br /></td></tr>
+<tr class="separator:aaf0e70047865fecf89c109f47b60e9bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abffec5a864260a116ebf64d07a98ebf0"><td class="memItemLeft" align="right" valign="top"><a id="abffec5a864260a116ebf64d07a98ebf0"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="settings_8h.html#abffec5a864260a116ebf64d07a98ebf0">shipsMagicNumbers</a> { <b>highestPossibleShipType</b> = 5, 
+<b>lowestPossibleShipType</b> = 1
+ }</td></tr>
+<tr class="memdesc:abffec5a864260a116ebf64d07a98ebf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ships magic numbers. <br /></td></tr>
+<tr class="separator:abffec5a864260a116ebf64d07a98ebf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d3d511af14e0d9fdb856aed74e77b58"><td class="memItemLeft" align="right" valign="top"><a id="a0d3d511af14e0d9fdb856aed74e77b58"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="settings_8h.html#a0d3d511af14e0d9fdb856aed74e77b58">charsMagicNumbers</a> : char { <b>alphabetFirstChar</b> = 'A', 
+<b>alphabetLastChar</b> = 'Z', 
+<b>horizontal</b> = 'H', 
+<b>vertical</b> = 'V'
+ }</td></tr>
+<tr class="memdesc:a0d3d511af14e0d9fdb856aed74e77b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offsets, chars etc magic numbers. <br /></td></tr>
+<tr class="separator:a0d3d511af14e0d9fdb856aed74e77b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a8aa292716a0bf27656fbbd80080aa1"><td class="memItemLeft" align="right" valign="top"><a id="a9a8aa292716a0bf27656fbbd80080aa1"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="settings_8h.html#a9a8aa292716a0bf27656fbbd80080aa1">shipType</a> { <br />
 &#160;&#160;<b>Scout</b> = 1, 
 <b>Ubot</b>, 
@@ -103,30 +126,10 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a38e5db0736327d249b790fa07a6467f6"><td class="memItemLeft" align="right" valign="top"><a id="a38e5db0736327d249b790fa07a6467f6"></a>
-constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="settings_8h.html#a38e5db0736327d249b790fa07a6467f6">boardRows</a> = 10</td></tr>
-<tr class="memdesc:a38e5db0736327d249b790fa07a6467f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rows in boards. <br /></td></tr>
-<tr class="separator:a38e5db0736327d249b790fa07a6467f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31f50537a91d54201e19fa1216d03d87"><td class="memItemLeft" align="right" valign="top"><a id="a31f50537a91d54201e19fa1216d03d87"></a>
-constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="settings_8h.html#a31f50537a91d54201e19fa1216d03d87">boardColumns</a> = 10</td></tr>
-<tr class="memdesc:a31f50537a91d54201e19fa1216d03d87"><td class="mdescLeft">&#160;</td><td class="mdescRight">columns in boards <br /></td></tr>
-<tr class="separator:a31f50537a91d54201e19fa1216d03d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac66ae599cbe4f255ae3fbd4d64ae5d11"><td class="memItemLeft" align="right" valign="top"><a id="ac66ae599cbe4f255ae3fbd4d64ae5d11"></a>
-constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="settings_8h.html#ac66ae599cbe4f255ae3fbd4d64ae5d11">fleetPoints</a> = 10</td></tr>
-<tr class="memdesc:ac66ae599cbe4f255ae3fbd4d64ae5d11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Player points. <br /></td></tr>
-<tr class="separator:ac66ae599cbe4f255ae3fbd4d64ae5d11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1024f3cd960cb62d9f0932cacd251b29"><td class="memItemLeft" align="right" valign="top"><a id="a1024f3cd960cb62d9f0932cacd251b29"></a>
 constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="settings_8h.html#a1024f3cd960cb62d9f0932cacd251b29">stringUserType</a> [6] {&quot;Discard&quot; ,&quot;Scout&quot;, &quot;Ubot&quot;, &quot;Hybrid&quot;, &quot;Destroyer&quot;, &quot;Aircraft_carrier&quot;}</td></tr>
 <tr class="memdesc:a1024f3cd960cb62d9f0932cacd251b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Options which are shown when user should choose ship type. <br /></td></tr>
 <tr class="separator:a1024f3cd960cb62d9f0932cacd251b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a454f1444d6bdb623a01bc92ed6df0e81"><td class="memItemLeft" align="right" valign="top"><a id="a454f1444d6bdb623a01bc92ed6df0e81"></a>
-constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="settings_8h.html#a454f1444d6bdb623a01bc92ed6df0e81">highestPossibleShipType</a> = 5</td></tr>
-<tr class="memdesc:a454f1444d6bdb623a01bc92ed6df0e81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum ship type. <br /></td></tr>
-<tr class="separator:a454f1444d6bdb623a01bc92ed6df0e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1625b576f56cd181b5802802977add6"><td class="memItemLeft" align="right" valign="top"><a id="ac1625b576f56cd181b5802802977add6"></a>
-constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="settings_8h.html#ac1625b576f56cd181b5802802977add6">lowestPossibleShipType</a> = 1</td></tr>
-<tr class="memdesc:ac1625b576f56cd181b5802802977add6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum ship type. <br /></td></tr>
-<tr class="separator:ac1625b576f56cd181b5802802977add6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Header with settings variables and magic numbers used as parameters in software. </p>

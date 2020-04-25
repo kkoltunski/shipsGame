@@ -1,7 +1,11 @@
 var searchData=
 [
-  ['placementdirection_43',['placementDirection',['../classship.html#a9d1569f0facfb96fbde1f8e60cdcc2c8',1,'ship']]],
-  ['pointscontroll_44',['pointsControll',['../structuser_data_interface.html#aa8c81f7bb3163c474c308b16e629a3e1',1,'userDataInterface']]],
-  ['positionocupied_45',['positionOcupied',['../structposition_ocupied.html',1,'']]],
-  ['possibleshipscalculation_46',['possibleShipsCalculation',['../structuser_data_interface.html#ae32dadd1496162a5133fb76364024d07',1,'userDataInterface']]]
+  ['reloadreferences_45',['reloadReferences',['../classuser_data_interface.html#a0be05c3b716697b4cf4e54eefdcdc9fb',1,'userDataInterface']]],
+  ['returnabsolutecolumn_46',['returnAbsoluteColumn',['../structi_board.html#a8979e826bdf7f74910b4bb69f1730f83',1,'iBoard']]],
+  ['returnabsoluterow_47',['returnAbsoluteRow',['../structi_board.html#a2fd2ce56fd70f1266589b8db877ebc48',1,'iBoard']]],
+  ['returnchoosenshiptype_48',['returnChoosenShipType',['../structi_ship.html#ae28b4ddd6944d092032db2338571b7a3',1,'iShip']]],
+  ['returnplayername_49',['returnPlayerName',['../structi_player.html#a7a464ecca24b48bd05afa1a1fdeacdc0',1,'iPlayer']]],
+  ['returnpoints_50',['returnPoints',['../structi_player.html#a0f2574653ea43835727e24984a31cc93',1,'iPlayer']]],
+  ['returnpossibleships_51',['returnPossibleShips',['../structi_ship.html#a7997066c9b74f55f54ee703a4816df74',1,'iShip']]],
+  ['returntypeddirection_52',['returnTypedDirection',['../structi_board.html#a31ede88c5342eb7366b02893365f1650',1,'iBoard']]]
 ];

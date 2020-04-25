@@ -10,12 +10,35 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=242pt]{settings_8h__dep__incl}
+\includegraphics[width=181pt]{settings_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{settings_8h_a1f6cf49231696f71fed6dce4192d9ae3}\label{settings_8h_a1f6cf49231696f71fed6dce4192d9ae3}} 
+enum \mbox{\hyperlink{settings_8h_a1f6cf49231696f71fed6dce4192d9ae3}{board\+Magic\+Numbers}} \{ {\bfseries board\+Rows} = 10, 
+{\bfseries board\+Columns} = 10, 
+{\bfseries alphabet\+Size} = 26
+ \}
+\begin{DoxyCompactList}\small\item\em Boards magic numbers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{settings_8h_aaf0e70047865fecf89c109f47b60e9bd}\label{settings_8h_aaf0e70047865fecf89c109f47b60e9bd}} 
+enum \mbox{\hyperlink{settings_8h_aaf0e70047865fecf89c109f47b60e9bd}{fleet\+Magic\+Numbers}} \{ {\bfseries fleet\+Points} = 10, 
+{\bfseries maximum\+Player\+Number} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Fleets magic numbers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{settings_8h_abffec5a864260a116ebf64d07a98ebf0}\label{settings_8h_abffec5a864260a116ebf64d07a98ebf0}} 
+enum \mbox{\hyperlink{settings_8h_abffec5a864260a116ebf64d07a98ebf0}{ships\+Magic\+Numbers}} \{ {\bfseries highest\+Possible\+Ship\+Type} = 5, 
+{\bfseries lowest\+Possible\+Ship\+Type} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Ships magic numbers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{settings_8h_a0d3d511af14e0d9fdb856aed74e77b58}\label{settings_8h_a0d3d511af14e0d9fdb856aed74e77b58}} 
+enum \mbox{\hyperlink{settings_8h_a0d3d511af14e0d9fdb856aed74e77b58}{chars\+Magic\+Numbers}} \+: char \{ {\bfseries alphabet\+First\+Char} = \textquotesingle{}A\textquotesingle{}, 
+{\bfseries alphabet\+Last\+Char} = \textquotesingle{}Z\textquotesingle{}, 
+{\bfseries horizontal} = \textquotesingle{}H\textquotesingle{}, 
+{\bfseries vertical} = \textquotesingle{}V\textquotesingle{}
+ \}
+\begin{DoxyCompactList}\small\item\em Offsets, chars etc magic numbers. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{settings_8h_a9a8aa292716a0bf27656fbbd80080aa1}\label{settings_8h_a9a8aa292716a0bf27656fbbd80080aa1}} 
 enum \mbox{\hyperlink{settings_8h_a9a8aa292716a0bf27656fbbd80080aa1}{ship\+Type}} \{ \newline
 {\bfseries Scout} = 1, 
@@ -29,24 +52,9 @@ enum \mbox{\hyperlink{settings_8h_a9a8aa292716a0bf27656fbbd80080aa1}{ship\+Type}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{settings_8h_a38e5db0736327d249b790fa07a6467f6}\label{settings_8h_a38e5db0736327d249b790fa07a6467f6}} 
-constexpr int \mbox{\hyperlink{settings_8h_a38e5db0736327d249b790fa07a6467f6}{board\+Rows}} = 10
-\begin{DoxyCompactList}\small\item\em Rows in boards. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{settings_8h_a31f50537a91d54201e19fa1216d03d87}\label{settings_8h_a31f50537a91d54201e19fa1216d03d87}} 
-constexpr int \mbox{\hyperlink{settings_8h_a31f50537a91d54201e19fa1216d03d87}{board\+Columns}} = 10
-\begin{DoxyCompactList}\small\item\em columns in boards \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{settings_8h_ac66ae599cbe4f255ae3fbd4d64ae5d11}\label{settings_8h_ac66ae599cbe4f255ae3fbd4d64ae5d11}} 
-constexpr int \mbox{\hyperlink{settings_8h_ac66ae599cbe4f255ae3fbd4d64ae5d11}{fleet\+Points}} = 10
-\begin{DoxyCompactList}\small\item\em Player points. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{settings_8h_a1024f3cd960cb62d9f0932cacd251b29}\label{settings_8h_a1024f3cd960cb62d9f0932cacd251b29}} 
 constexpr const char $\ast$ \mbox{\hyperlink{settings_8h_a1024f3cd960cb62d9f0932cacd251b29}{string\+User\+Type}} \mbox{[}6\mbox{]} \{\char`\"{}Discard\char`\"{} ,\char`\"{}Scout\char`\"{}, \char`\"{}Ubot\char`\"{}, \char`\"{}Hybrid\char`\"{}, \char`\"{}Destroyer\char`\"{}, \char`\"{}Aircraft\+\_\+carrier\char`\"{}\}
-\begin{DoxyCompactList}\small\item\em Options which are shown when user should choose ship type. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{settings_8h_a454f1444d6bdb623a01bc92ed6df0e81}\label{settings_8h_a454f1444d6bdb623a01bc92ed6df0e81}} 
-constexpr int \mbox{\hyperlink{settings_8h_a454f1444d6bdb623a01bc92ed6df0e81}{highest\+Possible\+Ship\+Type}} = 5
-\begin{DoxyCompactList}\small\item\em Maximum ship type. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{settings_8h_ac1625b576f56cd181b5802802977add6}\label{settings_8h_ac1625b576f56cd181b5802802977add6}} 
-constexpr int \mbox{\hyperlink{settings_8h_ac1625b576f56cd181b5802802977add6}{lowest\+Possible\+Ship\+Type}} = 1
-\begin{DoxyCompactList}\small\item\em Minimum ship type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Options which are shown when user should choose ship type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

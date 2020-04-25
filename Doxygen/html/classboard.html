@@ -89,16 +89,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a06cbe5ec463e3be868eab1b3265b9c46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a06cbe5ec463e3be868eab1b3265b9c46">drawBoard</a> () const noexcept(true)</td></tr>
 <tr class="memdesc:a06cbe5ec463e3be868eab1b3265b9c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show board state.  <a href="classboard.html#a06cbe5ec463e3be868eab1b3265b9c46">More...</a><br /></td></tr>
 <tr class="separator:a06cbe5ec463e3be868eab1b3265b9c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a593a5d95198c2d5b0884f69d072c3f89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboard.html">board</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a593a5d95198c2d5b0884f69d072c3f89">operator=</a> (<a class="el" href="classboard.html">board</a> &amp;)</td></tr>
+<tr class="memdesc:a593a5d95198c2d5b0884f69d072c3f89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator =;.  <a href="classboard.html#a593a5d95198c2d5b0884f69d072c3f89">More...</a><br /></td></tr>
+<tr class="separator:a593a5d95198c2d5b0884f69d072c3f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:adc10fae41d02b04cf4bbd35544fd2ecd"><td class="memItemLeft" align="right" valign="top"><a id="adc10fae41d02b04cf4bbd35544fd2ecd"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#adc10fae41d02b04cf4bbd35544fd2ecd">iBoard</a></td></tr>
-<tr class="memdesc:adc10fae41d02b04cf4bbd35544fd2ecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board and interface communication. <br /></td></tr>
-<tr class="separator:adc10fae41d02b04cf4bbd35544fd2ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabc6ac27dc8715919f9541dae499871b"><td class="memItemLeft" align="right" valign="top"><a id="aabc6ac27dc8715919f9541dae499871b"></a>
+struct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#aabc6ac27dc8715919f9541dae499871b">iBoard</a></td></tr>
+<tr class="memdesc:aabc6ac27dc8715919f9541dae499871b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board and interface communication. <br /></td></tr>
+<tr class="separator:aabc6ac27dc8715919f9541dae499871b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Board is class which allow to place ships. It include (<a class="el" href="settings_8h.html#a38e5db0736327d249b790fa07a6467f6">boardRows</a> x <a class="el" href="settings_8h.html#a31f50537a91d54201e19fa1216d03d87">boardColumns</a>) field addresses. It stored each ship address which is placed on it. </p>
+<div class="textblock"><p>Board is class which allow to place ships. It include (boardRows x boardColumns) field addresses. It stored each ship address which is placed on it. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2a97f34e7c9ed8ace6a2508bb2c6e2a2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2a97f34e7c9ed8ace6a2508bb2c6e2a2">&#9670;&nbsp;</a></span>board() <span class="overload">[1/2]</span></h2>
@@ -130,7 +133,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
           <td class="memname">board::board </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classboard.html">board</a> &amp;&#160;</td>
-          <td class="paramname"><em>originalBoard</em></td><td>)</td>
+          <td class="paramname"><em>_originalBoard</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -200,6 +203,32 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 
 <p>Show board state. </p>
 <p>Method used for showing players boards. Method is also usefull while commissioning and software maintanence. </p>
+
+</div>
+</div>
+<a id="a593a5d95198c2d5b0884f69d072c3f89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a593a5d95198c2d5b0884f69d072c3f89">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboard.html">board</a> &amp; board::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboard.html">board</a> &amp;&#160;</td>
+          <td class="paramname"><em>_orginalBoard</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Operator =;. </p>
+<p>The same what copy constructor but parameter ocupation from fields in original board are copied to new created board. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">const</td><td>board&amp; originalBoard Reference to original board. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

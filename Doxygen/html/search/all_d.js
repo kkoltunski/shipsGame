@@ -1,11 +1,17 @@
 var searchData=
 [
-  ['reloadreferences_47',['reloadReferences',['../structuser_data_interface.html#a0be05c3b716697b4cf4e54eefdcdc9fb',1,'userDataInterface']]],
-  ['returnabsolutecolumn_48',['returnAbsoluteColumn',['../structi_board.html#a8979e826bdf7f74910b4bb69f1730f83',1,'iBoard']]],
-  ['returnabsoluterow_49',['returnAbsoluteRow',['../structi_board.html#a2fd2ce56fd70f1266589b8db877ebc48',1,'iBoard']]],
-  ['returnchoosenshiptype_50',['returnChoosenShipType',['../structi_ship.html#ae28b4ddd6944d092032db2338571b7a3',1,'iShip']]],
-  ['returnplayername_51',['returnPlayerName',['../structi_player.html#a7a464ecca24b48bd05afa1a1fdeacdc0',1,'iPlayer']]],
-  ['returnpoints_52',['returnPoints',['../structi_player.html#a0f2574653ea43835727e24984a31cc93',1,'iPlayer']]],
-  ['returnpossibleships_53',['returnPossibleShips',['../structi_ship.html#a7997066c9b74f55f54ee703a4816df74',1,'iShip']]],
-  ['returntypeddirection_54',['returnTypedDirection',['../structi_board.html#a31ede88c5342eb7366b02893365f1650',1,'iBoard']]]
+  ['scout_53',['scout',['../classscout.html',1,'scout'],['../classfield.html#a94154d8d06705c0e61a247ed3d1858bd',1,'field::scout()'],['../classscout.html#a9aa0c51a1830bb1b10dbd9b075fc58a1',1,'scout::scout()']]],
+  ['setshiptyperequest_54',['setShipTypeRequest',['../classuser_data_interface.html#af24ca8f12dc2eda36b66b3da27efbb5c',1,'userDataInterface']]],
+  ['settings_2eh_55',['settings.h',['../settings_8h.html',1,'']]],
+  ['setusertypedposition_56',['setUserTypedPosition',['../structi_board.html#a5b89218f67acccb52dd38f67ff92585b',1,'iBoard']]],
+  ['setusertypedpositionrequest_57',['setUserTypedPositionRequest',['../classuser_data_interface.html#a82bb58b82623bae6e13d1336313d300f',1,'userDataInterface']]],
+  ['ship_58',['ship',['../classship.html',1,'ship'],['../classfield.html#aa75352685991cd220fe898a3ca61042c',1,'field::ship()'],['../classship.html#ab2e0c70d27d906a69850965e48c66ff1',1,'ship::ship()']]],
+  ['shipplacement_59',['shipPlacement',['../classuser_data_interface.html#afbe9de8011c22f1be7f21657e03ec6dd',1,'userDataInterface']]],
+  ['shipsmagicnumbers_60',['shipsMagicNumbers',['../settings_8h.html#abffec5a864260a116ebf64d07a98ebf0',1,'settings.h']]],
+  ['shiptype_61',['shipType',['../settings_8h.html#a9a8aa292716a0bf27656fbbd80080aa1',1,'settings.h']]],
+  ['shipyard_62',['shipyard',['../structi_ship.html#a9305db198c9d96ed3540f86764730543',1,'iShip']]],
+  ['shipyard_2eh_63',['shipyard.h',['../shipyard_8h.html',1,'']]],
+  ['showavailableshipsinconsole_64',['showAvailableShipsInConsole',['../classuser_data_interface.html#af7a50059bd16dab6563a9080de620c92',1,'userDataInterface']]],
+  ['showshipsaddresses_65',['showShipsAddresses',['../classboard.html#a7d277b66cc42c7b0a72486d32cd06fcc',1,'board']]],
+  ['stringusertype_66',['stringUserType',['../settings_8h.html#a1024f3cd960cb62d9f0932cacd251b29',1,'settings.h']]]
 ];

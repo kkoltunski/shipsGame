@@ -1,5 +1,10 @@
 var searchData=
 [
-  ['what_73',['what',['../structincorrect_position.html#a6f56fcf41219bfe036f65fdfc50f7fec',1,'incorrectPosition::what()'],['../structposition_ocupied.html#a77341834895a3237b491db0545726bce',1,'positionOcupied::what()'],['../structwrong_ship_type.html#af9aaf04bc61a63192519e7a7009ba18e',1,'wrongShipType::what()']]],
-  ['wrongshiptype_74',['wrongShipType',['../structwrong_ship_type.html',1,'']]]
+  ['_7eaircraft_5fcarrier_74',['~aircraft_carrier',['../classaircraft__carrier.html#a0bb90eacd183dc0a2d0473e1a39bc9cf',1,'aircraft_carrier']]],
+  ['_7eboard_75',['~board',['../classboard.html#a978427d3593354f5d735a766585a2ad2',1,'board']]],
+  ['_7edestroyer_76',['~destroyer',['../classdestroyer.html#a3fdcefcf904aea9c6de01712955cf516',1,'destroyer']]],
+  ['_7ehybrid_77',['~hybrid',['../classhybrid.html#a7ce57cd1b09be0321b960e128b92f10e',1,'hybrid']]],
+  ['_7escout_78',['~scout',['../classscout.html#a6b5621575f845b55fa74b1c0ba53fcc9',1,'scout']]],
+  ['_7eship_79',['~ship',['../classship.html#ae956517de64b648e41dec9d8dbf14509',1,'ship']]],
+  ['_7eu_5fbot_80',['~u_bot',['../classu__bot.html#a310445de5e2cfda535758bdd0cc009a8',1,'u_bot']]]
 ];

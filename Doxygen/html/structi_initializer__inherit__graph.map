@@ -3,5 +3,5 @@
 <area shape="rect" id="node2" href="$structi_board.html" title=" " alt="" coords="5,80,64,107"/>
 <area shape="rect" id="node3" href="$structi_player.html" title=" " alt="" coords="89,80,151,107"/>
 <area shape="rect" id="node4" href="$structi_ship.html" title=" " alt="" coords="176,80,227,107"/>
-<area shape="rect" id="node5" href="$structuser_data_interface.html" title=" " alt="" coords="251,80,373,107"/>
+<area shape="rect" id="node5" href="$classuser_data_interface.html" title=" " alt="" coords="251,80,373,107"/>
 </map>

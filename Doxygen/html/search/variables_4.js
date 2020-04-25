@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lowestpossibleshiptype_167',['lowestPossibleShipType',['../settings_8h.html#ac1625b576f56cd181b5802802977add6',1,'settings.h']]]
+  ['type_165',['type',['../classship.html#aa76c087bcc17f7458187656c40039b7d',1,'ship']]]
 ];

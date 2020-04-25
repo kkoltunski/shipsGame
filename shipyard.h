@@ -9,8 +9,6 @@
 #ifndef TSHIP_H
 #define TSHIP_H
 
-/*This class is used as ships 1-4 type*/
-#include <iostream>
 #include "field.h"
 #include "settings.h"
 

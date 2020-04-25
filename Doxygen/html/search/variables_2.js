@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['highestpossibleshiptype_164',['highestPossibleShipType',['../settings_8h.html#a454f1444d6bdb623a01bc92ed6df0e81',1,'settings.h']]]
+  ['placementdirection_163',['placementDirection',['../classship.html#a9d1569f0facfb96fbde1f8e60cdcc2c8',1,'ship']]]
 ];

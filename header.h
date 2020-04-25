@@ -9,16 +9,7 @@
 #ifndef HEADER_H
 #define HEADER_H
 
-#include <iostream>
-#include <vector>
-#include <string>
-#include <iomanip> 
-#include "userDataInterface.h"
-#include "settings.h"
-#include "field.h"
-#include "board.h"
 #include "fleet.h"
-//#include "shipyard.h"
 
 using std::cout;
 using std::cin;

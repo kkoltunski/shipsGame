@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['getdirection_119',['getDirection',['../structi_board.html#abf1bdb5cc0449baa71e5502c31968ff7',1,'iBoard']]],
-  ['getfieldaddress_120',['getFieldAddress',['../structi_board.html#a8cd65756c5148ab97ef71a52ca2f1233',1,'iBoard']]],
-  ['getfieldoccupation_121',['getFieldOccupation',['../structi_board.html#ac0a1889aecad95686cc439435a27738e',1,'iBoard']]],
-  ['getusertypedship_122',['getUserTypedShip',['../structi_ship.html#aeed0142c9fb2b9a01c4cf52fe0a44cc9',1,'iShip']]]
+  ['getdirection_118',['getDirection',['../structi_board.html#abf1bdb5cc0449baa71e5502c31968ff7',1,'iBoard']]],
+  ['getfieldaddress_119',['getFieldAddress',['../structi_board.html#a8cd65756c5148ab97ef71a52ca2f1233',1,'iBoard']]],
+  ['getfieldoccupation_120',['getFieldOccupation',['../structi_board.html#ac0a1889aecad95686cc439435a27738e',1,'iBoard']]],
+  ['getusertypedship_121',['getUserTypedShip',['../structi_ship.html#aeed0142c9fb2b9a01c4cf52fe0a44cc9',1,'iShip']]]
 ];

@@ -5,16 +5,7 @@
 Main header with included libraries.  
 
 
-{\ttfamily \#include $<$iostream$>$}\newline
-{\ttfamily \#include $<$vector$>$}\newline
-{\ttfamily \#include $<$string$>$}\newline
-{\ttfamily \#include $<$iomanip$>$}\newline
-{\ttfamily \#include \char`\"{}user\+Data\+Interface.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}settings.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}field.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}board.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}fleet.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}shipyard.\+h\char`\"{}}\newline
 Include dependency graph for header.\+h\+:
 \nopagebreak
 \begin{figure}[H]
@@ -27,12 +18,12 @@ Include dependency graph for header.\+h\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{header_8h_af4f4edef7ba8c55b74fc3501bbada452}\label{header_8h_af4f4edef7ba8c55b74fc3501bbada452}} 
-\mbox{\hyperlink{classfleet}{fleet}} {\bfseries Player1} (\mbox{\hyperlink{settings_8h_ac66ae599cbe4f255ae3fbd4d64ae5d11}{fleet\+Points}})
+\mbox{\hyperlink{classfleet}{fleet}} {\bfseries Player1} (fleet\+Points)
 \item 
 \mbox{\Hypertarget{header_8h_a8925cc884830dd5f9f8d65d647fbfd0d}\label{header_8h_a8925cc884830dd5f9f8d65d647fbfd0d}} 
-\mbox{\hyperlink{classfleet}{fleet}} {\bfseries Player2} (\mbox{\hyperlink{settings_8h_ac66ae599cbe4f255ae3fbd4d64ae5d11}{fleet\+Points}})
+\mbox{\hyperlink{classfleet}{fleet}} {\bfseries Player2} (fleet\+Points)
 \item 
-std\+::ostream \& \mbox{\hyperlink{header_8h_a75adb1cee7d7d878c442a82ab2d04785}{operator$<$$<$}} (std\+::ostream \&\+\_\+in\+Stream, \mbox{\hyperlink{classfield}{field}} \&\+\_\+in\+Field)
+std\+::ostream \& \mbox{\hyperlink{header_8h_a3b5ca5bd74b08c5bcf3486d92fbfe226}{operator$<$$<$}} (std\+::ostream \&\+\_\+in\+Stream, const \mbox{\hyperlink{classfield}{field}} \&\+\_\+in\+Field)
 \begin{DoxyCompactList}\small\item\em Operator to make possible showing field information. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -63,11 +54,11 @@ April 2020
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{header_8h_a75adb1cee7d7d878c442a82ab2d04785}\label{header_8h_a75adb1cee7d7d878c442a82ab2d04785}} 
+\mbox{\Hypertarget{header_8h_a3b5ca5bd74b08c5bcf3486d92fbfe226}\label{header_8h_a3b5ca5bd74b08c5bcf3486d92fbfe226}} 
 \index{header.h@{header.h}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!header.h@{header.h}}
 \doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
-{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{\+\_\+in\+Stream,  }\item[{\mbox{\hyperlink{classfield}{field}} \&}]{\+\_\+in\+Field }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{\+\_\+in\+Stream,  }\item[{const \mbox{\hyperlink{classfield}{field}} \&}]{\+\_\+in\+Field }\end{DoxyParamCaption})}
 
 
 

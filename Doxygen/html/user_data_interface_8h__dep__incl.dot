@@ -9,5 +9,4 @@ digraph "userDataInterface.h"
   Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="header.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$header_8h.html",tooltip="Main header with included libraries."];
-  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

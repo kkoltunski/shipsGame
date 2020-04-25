@@ -11,5 +11,4 @@ digraph "errorsHandling.h"
   Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 [label="header.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$header_8h.html",tooltip="Main header with included libraries."];
-  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

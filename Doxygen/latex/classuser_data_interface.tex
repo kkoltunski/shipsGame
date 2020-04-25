@@ -1,0 +1,157 @@
+\hypertarget{classuser_data_interface}{}\doxysection{user\+Data\+Interface Class Reference}
+\label{classuser_data_interface}\index{userDataInterface@{userDataInterface}}
+
+
+Inheritance diagram for user\+Data\+Interface\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classuser_data_interface__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for user\+Data\+Interface\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classuser_data_interface__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classuser_data_interface_ab97dbe9dfc66894945317262acd00125}{user\+Data\+Interface}} (\mbox{\hyperlink{classboard}{board}} $\ast$\+\_\+board, \mbox{\hyperlink{classfleet}{fleet}} $\ast$\+\_\+player)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classuser_data_interface_a82bb58b82623bae6e13d1336313d300f}\label{classuser_data_interface_a82bb58b82623bae6e13d1336313d300f}} 
+void \mbox{\hyperlink{classuser_data_interface_a82bb58b82623bae6e13d1336313d300f}{set\+User\+Typed\+Position\+Request}} () const noexcept(true)
+\begin{DoxyCompactList}\small\item\em Request to type position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classuser_data_interface_af24ca8f12dc2eda36b66b3da27efbb5c}\label{classuser_data_interface_af24ca8f12dc2eda36b66b3da27efbb5c}} 
+void \mbox{\hyperlink{classuser_data_interface_af24ca8f12dc2eda36b66b3da27efbb5c}{set\+Ship\+Type\+Request}} () noexcept(true)
+\begin{DoxyCompactList}\small\item\em Request to type ship type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classuser_data_interface_af515833dfdc90d07616ad0c7308364fc}\label{classuser_data_interface_af515833dfdc90d07616ad0c7308364fc}} 
+bool \mbox{\hyperlink{classuser_data_interface_af515833dfdc90d07616ad0c7308364fc}{is\+Occupied}} () noexcept(true)
+\begin{DoxyCompactList}\small\item\em Request to \mbox{\hyperlink{structi_board}{i\+Board}} interface if typed field is occupied. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classuser_data_interface_ab5a688baf371d27a77d6f1edabb73dc8}{manage\+User\+Typed\+Position}} () noexcept(false)
+\begin{DoxyCompactList}\small\item\em User typed postion request. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classuser_data_interface_ae32dadd1496162a5133fb76364024d07}\label{classuser_data_interface_ae32dadd1496162a5133fb76364024d07}} 
+void \mbox{\hyperlink{classuser_data_interface_ae32dadd1496162a5133fb76364024d07}{possible\+Ships\+Calculation}} ()
+\begin{DoxyCompactList}\small\item\em Possible ships calculation order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classuser_data_interface_af7a50059bd16dab6563a9080de620c92}{show\+Available\+Ships\+In\+Console}} () noexcept(false)
+\begin{DoxyCompactList}\small\item\em Showing options in console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classuser_data_interface_afbe9de8011c22f1be7f21657e03ec6dd}{ship\+Placement}} () noexcept(false)
+\begin{DoxyCompactList}\small\item\em Main method to call ship placement process. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classuser_data_interface_aa8c81f7bb3163c474c308b16e629a3e1}{points\+Controll}} () noexcept(true)
+\item 
+void \mbox{\hyperlink{classuser_data_interface_a0be05c3b716697b4cf4e54eefdcdc9fb}{reload\+References}} (\mbox{\hyperlink{classboard}{board}} $\ast$\+\_\+board, \mbox{\hyperlink{classfleet}{fleet}} $\ast$\+\_\+player) noexcept(true)
+\begin{DoxyCompactList}\small\item\em Object references update. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classuser_data_interface_a2a7cc4733141dabcce96e028963a4cfc}{initialize}} () noexcept(true) override
+\begin{DoxyCompactList}\small\item\em Method to initialize interfaces. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classuser_data_interface_ab97dbe9dfc66894945317262acd00125}\label{classuser_data_interface_ab97dbe9dfc66894945317262acd00125}} 
+\index{userDataInterface@{userDataInterface}!userDataInterface@{userDataInterface}}
+\index{userDataInterface@{userDataInterface}!userDataInterface@{userDataInterface}}
+\doxysubsubsection{\texorpdfstring{userDataInterface()}{userDataInterface()}}
+{\footnotesize\ttfamily user\+Data\+Interface\+::user\+Data\+Interface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classboard}{board}} $\ast$}]{\+\_\+board,  }\item[{\mbox{\hyperlink{classfleet}{fleet}} $\ast$}]{\+\_\+player }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Assigning addresses of referenced objects and give \mbox{\hyperlink{structi_board}{i\+Board}} interface order to prepare columns definition. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+board} & Real board address. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+player} & Real player address. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classuser_data_interface_a2a7cc4733141dabcce96e028963a4cfc}\label{classuser_data_interface_a2a7cc4733141dabcce96e028963a4cfc}} 
+\index{userDataInterface@{userDataInterface}!initialize@{initialize}}
+\index{initialize@{initialize}!userDataInterface@{userDataInterface}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void user\+Data\+Interface\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Method to initialize interfaces. 
+
+Other interfaces \mbox{\hyperlink{classuser_data_interface_a2a7cc4733141dabcce96e028963a4cfc}{initialize()}} method calls and initialize itself. 
+
+Implements \mbox{\hyperlink{structi_initializer_a2afaf8bec0acb05bdec75a8adb1d79a1}{i\+Initializer}}.
+
+\mbox{\Hypertarget{classuser_data_interface_ab5a688baf371d27a77d6f1edabb73dc8}\label{classuser_data_interface_ab5a688baf371d27a77d6f1edabb73dc8}} 
+\index{userDataInterface@{userDataInterface}!manageUserTypedPosition@{manageUserTypedPosition}}
+\index{manageUserTypedPosition@{manageUserTypedPosition}!userDataInterface@{userDataInterface}}
+\doxysubsubsection{\texorpdfstring{manageUserTypedPosition()}{manageUserTypedPosition()}}
+{\footnotesize\ttfamily bool user\+Data\+Interface\+::manage\+User\+Typed\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+User typed postion request. 
+
+Main method to manage user typed position. Position is typed, then checked if is valid, then checked if field is valid and at the end user have to type direction. 
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{structposition_ocupied}{position\+Ocupied}}} & When get\+Field\+Occupation() method result is true. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+Correctness state (true -\/ position and direction typed correct, false -\/ position is occupied). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classuser_data_interface_aa8c81f7bb3163c474c308b16e629a3e1}\label{classuser_data_interface_aa8c81f7bb3163c474c308b16e629a3e1}} 
+\index{userDataInterface@{userDataInterface}!pointsControll@{pointsControll}}
+\index{pointsControll@{pointsControll}!userDataInterface@{userDataInterface}}
+\doxysubsubsection{\texorpdfstring{pointsControll()}{pointsControll()}}
+{\footnotesize\ttfamily bool user\+Data\+Interface\+::points\+Controll (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Method used to update player point value after successfull ship placement process. \begin{DoxyReturn}{Returns}
+Feedback if player has still points (true -\/ player has points, false -\/ player points are 0). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classuser_data_interface_a0be05c3b716697b4cf4e54eefdcdc9fb}\label{classuser_data_interface_a0be05c3b716697b4cf4e54eefdcdc9fb}} 
+\index{userDataInterface@{userDataInterface}!reloadReferences@{reloadReferences}}
+\index{reloadReferences@{reloadReferences}!userDataInterface@{userDataInterface}}
+\doxysubsubsection{\texorpdfstring{reloadReferences()}{reloadReferences()}}
+{\footnotesize\ttfamily void user\+Data\+Interface\+::reload\+References (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classboard}{board}} $\ast$}]{\+\_\+board,  }\item[{\mbox{\hyperlink{classfleet}{fleet}} $\ast$}]{\+\_\+player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Object references update. 
+
+Method used to update references to real object stored in interfaces. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+board} & Board address which should be assign as new object reference. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+player} & Player address which should be assign as new object reference. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classuser_data_interface_afbe9de8011c22f1be7f21657e03ec6dd}\label{classuser_data_interface_afbe9de8011c22f1be7f21657e03ec6dd}} 
+\index{userDataInterface@{userDataInterface}!shipPlacement@{shipPlacement}}
+\index{shipPlacement@{shipPlacement}!userDataInterface@{userDataInterface}}
+\doxysubsubsection{\texorpdfstring{shipPlacement()}{shipPlacement()}}
+{\footnotesize\ttfamily void user\+Data\+Interface\+::ship\+Placement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Main method to call ship placement process. 
+
+Method call shipyard() to try place ship and if placement is succesfull then give order to board (through \mbox{\hyperlink{structi_board}{i\+Board}} interface) to add it\textquotesingle{}s address to vector. \mbox{\Hypertarget{classuser_data_interface_af7a50059bd16dab6563a9080de620c92}\label{classuser_data_interface_af7a50059bd16dab6563a9080de620c92}} 
+\index{userDataInterface@{userDataInterface}!showAvailableShipsInConsole@{showAvailableShipsInConsole}}
+\index{showAvailableShipsInConsole@{showAvailableShipsInConsole}!userDataInterface@{userDataInterface}}
+\doxysubsubsection{\texorpdfstring{showAvailableShipsInConsole()}{showAvailableShipsInConsole()}}
+{\footnotesize\ttfamily void user\+Data\+Interface\+::show\+Available\+Ships\+In\+Console (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Showing options in console. 
+
+Method is used to show player ships options to choose. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{user_data_interface_8h}{user\+Data\+Interface.\+h}}\item 
+user\+Data\+Interface.\+cpp\end{DoxyCompactItemize}

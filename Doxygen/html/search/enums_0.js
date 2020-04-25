@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['shiptype_172',['shipType',['../settings_8h.html#a9a8aa292716a0bf27656fbbd80080aa1',1,'settings.h']]]
+  ['boardmagicnumbers_166',['boardMagicNumbers',['../settings_8h.html#a1f6cf49231696f71fed6dce4192d9ae3',1,'settings.h']]]
 ];

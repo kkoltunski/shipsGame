@@ -20,10 +20,13 @@ void iBoard::calculateColumnAbsoluteValue() noexcept(true) {
 	size_t columnPosition = userTypedPosition.find_first_of(columnsDefinitions);
 	char nextChar = userTypedPosition[columnPosition + 1];
 
-	absoluteColumn = (userTypedPosition[columnPosition] - 'A');
+	absoluteColumn = (userTypedPosition[columnPosition] - alphabetFirstChar);
 
-	if (boardColumns > 26)
-		if ((nextChar >= 'A') && (nextChar <= 'Z')) absoluteColumn += (nextChar - 39);				//e.g column position AA => for 1'st digit (A) absoluteColumn = 0, for 2'nd digit (A) absoluteColumn = (65-39) = 26 
+	if (boardColumns > alphabetSize) {
+		if ((nextChar >= alphabetFirstChar) && (nextChar <= alphabetLastChar)) {
+			absoluteColumn += (nextChar - 39);				//e.g column position AA => for 1'st digit (A) absoluteColumn = 0, for 2'nd digit (A) absoluteColumn = (65-39) = 26 
+		}
+	}
 
 	absoluteColumn = (absoluteColumn > (boardColumns - 1) ? (boardColumns - 1) : absoluteColumn);
 }
@@ -80,9 +83,9 @@ void iBoard::getDirection() noexcept(true) {
 		cin.ignore();
 
 		typedDirection = toupper(typedDirection);
-	} while (!((typedDirection == 'H') || (typedDirection == 'V')));
+	} while (!((typedDirection == horizontal) || (typedDirection == vertical)));
 
-	Dir = (typedDirection == 'V' ? true : false);
+	Dir = (typedDirection == vertical ? true : false);
 }
 
 /**
@@ -239,7 +242,7 @@ ship* iShip::shipyard(const iBoard& _boardInterface) noexcept(true) {
 		case (static_cast<short>(shipType::Scout)):
 			pToShip = new scout(_boardInterface.getFieldAddress(), _boardInterface.returnTypedDirection(), shipType::Scout);
 			break;
-		defaul:
+		default:
 			break;
 		}
 	}
@@ -263,6 +266,8 @@ userDataInterface::userDataInterface(board* _board, fleet* _player) {
 	playerInterface.addressAssigment(_player);
 
 	boardInterface.makeColumnsDefinition();
+
+	//initialize();
 }
 
 /**

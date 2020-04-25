@@ -15,14 +15,14 @@ class ship;
 /**
  * Field is class representing part of board.
  */
-class field
+class field 
 {
 private:
 	bool occupiedByShip;
 	bool shipDirection;
 	ship* pToShip;
 
-	field(bool _ocupation = false)	: occupiedByShip(_ocupation), pToShip{nullptr}{
+	field(bool _ocupation = false) : occupiedByShip(_ocupation), pToShip{ nullptr }, shipDirection{false}{
 	}
 	virtual ~field();
 
@@ -31,7 +31,7 @@ public:
 	field& operator=(field& _originalField);
 
 	///User and board communication interface.
-	friend class iBoard;
+	friend struct iBoard;
 	///Board is making changes in fields.
 	friend class board;
 	///Ship function modyfing field states.
@@ -47,7 +47,7 @@ public:
 	///Ship function modyfing field states.
 	friend class aircraft_carrier;
 	///External << operator to make possible showing field information.
-	friend std::ostream& operator<<(std::ostream& _inStream, field & _inField);
+	friend std::ostream& operator<<(std::ostream& _inStream, const field& _inField);
 };
 
 #endif

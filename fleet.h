@@ -28,13 +28,13 @@ private:
 		
 public:
 	///Constructor.
-	fleet(int _points, string&& _name = "Player" + std::to_string(playerNumber++));
+	explicit fleet(int _points, string&& _name = "Player" + std::to_string(playerNumber++));
 
 	///Copy operator (training purposes).
 	fleet& operator=(const fleet& In1);
 
 	///Player and interface communication.
-	friend class iPlayer;
+	friend struct iPlayer;
 	///Main interface communication
 	friend class userDataInterface;
 };

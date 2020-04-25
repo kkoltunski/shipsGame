@@ -8,23 +8,21 @@
 
 #ifndef SETTINGS_H
 #define SETTINGS_H
+///Boards magic numbers.
+enum boardMagicNumbers { boardRows = 10, boardColumns = 10, alphabetSize = 26};
 
-///Rows in boards
-constexpr int boardRows = 10;
-///columns in boards
-constexpr int boardColumns = 10;
+///Fleets magic numbers.
+enum fleetMagicNumbers { fleetPoints = 10 , maximumPlayerNumber = 2};
 
-///Player points
-constexpr int fleetPoints = 10;
+///Ships magic numbers.
+enum shipsMagicNumbers { highestPossibleShipType = 5, lowestPossibleShipType = 1};
+
+///Offsets, chars etc magic numbers.
+enum charsMagicNumbers : char {alphabetFirstChar = 'A', alphabetLastChar = 'Z', horizontal = 'H', vertical = 'V'};
+///Ships type using in shipyard.h
+enum class shipType { Scout = 1, Ubot, Hybrid, Destroyer, Aircraft_carrier };
 
 ///Options which are shown when user should choose ship type
 constexpr const char* stringUserType [6] {"Discard" ,"Scout", "Ubot", "Hybrid", "Destroyer", "Aircraft_carrier"};
-
-///Maximum ship type
-constexpr int highestPossibleShipType = 5;	
-///Minimum ship type
-constexpr int lowestPossibleShipType = 1;
-///Ships type using in shipyard.h
-enum class shipType { Scout = 1, Ubot, Hybrid, Destroyer, Aircraft_carrier };
 
 #endif

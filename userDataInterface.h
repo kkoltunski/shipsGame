@@ -55,6 +55,9 @@ public:
 struct iBoard : public iInitializer, public iAssigner<board>
 {
 private:
+	iBoard() {
+		initialize();
+	}
 	///Converting string size to upper cases.
 	inline void convertRelativePositionCasesSize() noexcept(true) {
 		for (auto& x : userTypedPosition) x = toupper(x);
@@ -113,6 +116,9 @@ public:
 		Dir = false;
 		initialized = true;
 	}
+
+	///Main interface which is allow to construct this interface.
+	friend class userDataInterface;
 };
 
 /**
@@ -120,6 +126,12 @@ public:
  */
 struct iPlayer : public iInitializer, public iAssigner<fleet>
 {
+private:
+	///Default constructor.
+	iPlayer() {
+		initialize();
+	}
+
 public:
 	///Return player name.
 	string returnPlayerName() const noexcept(true);
@@ -132,6 +144,9 @@ public:
 	virtual inline void initialize() noexcept(true) override {
 		initialized = true;
 	}
+
+	///Main interface which is allow to construct this interface.
+	friend class userDataInterface;
 };
 
 /**
@@ -140,6 +155,10 @@ public:
 struct iShip : public iInitializer
 {
 private:
+	///Default constructor.
+	iShip() {
+		initialize();
+	}
 	///Possible ships calculation.
 	void calculateHorizontalPossibilities(const iBoard&);
 	///Possible ships calculation.
@@ -176,9 +195,12 @@ public:
 		verticalDistanceToBorder = 0;
 		initialized = true;
 	}
+
+	///Main interface which is allow to construct this interface.
+	friend class userDataInterface;
 };
 
-struct userDataInterface : public iInitializer
+class userDataInterface : public iInitializer
 {
 	/**
 	 * xxxx
@@ -194,7 +216,7 @@ private:
 	iShip shipInterface;
 
 public:
-	///Constructor.
+	///Default constructor.
 	userDataInterface(board* _board, fleet* _player);
 
 	///Request to type position.

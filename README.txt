@@ -10,3 +10,7 @@ i dont know why but in Dev-C++ it worked as i except and maybe it is VisualStudi
 2020.04.24
 -Comments update for doxygen
 -Folder "Doxygen" include documentation
+
+2020.04.25 
+-Code rewiev with static analyse tool cppcheck.
+-Magic numbers - groupping and cleaning.

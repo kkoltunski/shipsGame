@@ -18,7 +18,7 @@
 #include "field.h"
 #include "board.h"
 #include "fleet.h"
-#include "shipyard.h"
+//#include "shipyard.h"
 
 using std::cout;
 using std::cin;
@@ -43,8 +43,18 @@ fleet *PlayerAddressTab[2] {&Player1, &Player2};
  * \param [in] _inField
  * \return Reference to used _inStream
  */
-std::ostream& operator<<(std::ostream& _inStream, field &_inField){
-	return _inStream << _inField;
+std::ostream& operator<<(std::ostream& _inStream, const field &_inField){
+    _inStream << "Field address = " << _inField.pToShip << "is ";
+    _inStream << (_inField.occupiedByShip ? "occupied in " : "not occupied.\n");
+
+    if(_inField.shipDirection) {
+        _inStream << "vertical direction.\n";
+    }
+    else {
+        _inStream << "horizontal direction.\n";
+    }
+
+    return _inStream;
 }
 
 #endif // !HEADER_H

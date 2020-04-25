@@ -14,6 +14,7 @@ field& field::operator=(field& _originalField) {
 		if (pToShip != nullptr)	delete pToShip;
 
 		occupiedByShip = _originalField.occupiedByShip;
+        pToShip = nullptr;
 	}
 	return *this;
 }

@@ -16,6 +16,7 @@
 #include <sstream>
 #include "settings.h"
 #include "field.h"
+#include "shipyard.h"
 
 using std::cout;
 using std::cin;
@@ -23,7 +24,8 @@ using std::endl;
 using std::string;
 using std::vector;
 
-struct userDataInterface;
+class userDataInterface;
+class ship;
 
 /**
 * Board is class which allow to place ships. It include (\ref boardRows x \ref boardColumns) field addresses.
@@ -54,7 +56,10 @@ public:
 	void drawBoard() const noexcept(true);
 
 	///Board and interface communication.
-	friend class iBoard;
+	friend struct iBoard;
+
+	///Operator =;
+	board& operator=(board&);
 };
 
 #endif

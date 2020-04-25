@@ -52,7 +52,7 @@ public:
 	virtual ~scout() override = default;
 
 	///Ship and interface communication.
-	friend class iShip;
+	friend struct iShip;
 };
 
 class u_bot : public ship
@@ -64,7 +64,7 @@ public:
 	virtual ~u_bot() override = default;
 
 	///Ship and interface communication.
-	friend class iShip;
+	friend struct iShip;
 };
 
 class hybrid : public ship
@@ -76,7 +76,7 @@ public:
 	virtual ~hybrid() override = default;
 
 	///Ship and interface communication.
-	friend class iShip;
+	friend struct iShip;
 };
 
 class destroyer : public ship
@@ -88,7 +88,7 @@ public:
 	virtual ~destroyer() override = default;
 
 	///Ship and interface communication.
-	friend class iShip;
+	friend struct iShip;
 };
 
 class aircraft_carrier : public ship
@@ -100,6 +100,6 @@ public:
 	virtual ~aircraft_carrier() override = default;
 
 	///Ship and interface communication.
-	friend class iShip;
+	friend struct iShip;
 };
 #endif

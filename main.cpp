@@ -1,7 +1,7 @@
 #include "header.h"
 
 int main(){
-	int counter {0};
+	int counter {};
 	userDataInterface UI(BoardAddressTab[counter], PlayerAddressTab[counter]);
 
 	cout << "*****FIRST STAGE - PLACE YOUR SHIP*****\n"
@@ -17,11 +17,13 @@ int main(){
 			UI.setShipTypeRequest();
 			UI.shipPlacement();
 			if(!UI.pointsControll()){
-				if(++counter < 2) UI.reloadReferences(BoardAddressTab[counter], PlayerAddressTab[counter]);
+				if (++counter < maximumPlayerNumber) {
+					UI.reloadReferences(BoardAddressTab[counter], PlayerAddressTab[counter]);
+				}
 			}
 		}
-	}
-	while(counter < 2);
+	} while (counter < maximumPlayerNumber);
+	
 	
 	cout << "\nPlayer1 borard : \n";
 	BoardAddressTab[0]->drawBoard();

@@ -19,10 +19,10 @@ board::board(){
 * The same what default constructor but parameter ocupation from fields in original board are copied to new created board.
  * @param[in] const board& originalBoard Reference to original board.
  */
-board::board(const board& originalBoard) {
+board::board(const board& _originalBoard) {
 	try {
 		beginingOfAlocatedArea = new field[boardRows * boardColumns];
-		for (int x = 0; x < (boardRows * boardColumns); x++) beginingOfAlocatedArea[x] = originalBoard.beginingOfAlocatedArea[x];
+		for (int x = 0; x < (boardRows * boardColumns); x++) beginingOfAlocatedArea[x] = _originalBoard.beginingOfAlocatedArea[x];
 		assignFieldAdresses();
 		makeColumnsAssigment();
 	}
@@ -63,24 +63,27 @@ void board::assignFieldAdresses() {
  * Method result is based on boardColumns defined in settings.h header.
  */
 void board::makeColumnsAssigment() {
-	string alphabet{ "ABCDEFGHIJKLMNOPQRSTUVWXYZ" };
-	short alphabetSize = alphabet.size();
-	short spaceBetweenColumns{};
 	char columnIngridient1{ 64 }, columnIngridient2{ 64 };
 	std::stringstream Row("");
 
 	for (int actualColumnNumber = 0; actualColumnNumber < boardColumns; actualColumnNumber++) {
-		spaceBetweenColumns = (actualColumnNumber > alphabetSize ? 3 : 4);
+		short spaceBetweenColumns = (actualColumnNumber > alphabetSize ? 3 : 4);
 
-		if ((actualColumnNumber % alphabetSize) || (actualColumnNumber == 0)) ++columnIngridient1;		//OR statement is necessary because expression "0 % ..." is 0
+		if ((actualColumnNumber % alphabetSize) || (actualColumnNumber == 0)){			//OR statement is necessary because expression "0 % ..." is 0
+			++columnIngridient1;
+		}
 		else {
 			++columnIngridient2;
 			columnIngridient1 = 'A';
 		}
 
 		Row << std::setw(spaceBetweenColumns) << "";
-		if (actualColumnNumber < alphabetSize) Row << columnIngridient1;
-		else Row << columnIngridient2 << columnIngridient1;
+		if (actualColumnNumber < alphabetSize) {
+			Row << columnIngridient1;
+		}
+		else {
+			Row << columnIngridient2 << columnIngridient1;
+		}
 	}
 
 	upperBranchDefinition = Row.str();
@@ -113,4 +116,24 @@ void board::showShipsAddresses() const noexcept(true) {
 			cout << "Net[" << x << "][" << y << "] = " << fieldAdresses[x][y] << endl;
 		}
 	}
+}
+
+/**
+* The same what copy constructor but parameter ocupation from fields in original board are copied to new created board.
+ * @param[in] const board& originalBoard Reference to original board.
+ */
+board& board::operator=(board& _orginalBoard) {
+	try {
+		if (&_orginalBoard != this) {
+			beginingOfAlocatedArea = new field[boardRows * boardColumns];
+			for (int x = 0; x < (boardRows * boardColumns); x++) beginingOfAlocatedArea[x] = _orginalBoard.beginingOfAlocatedArea[x];
+			assignFieldAdresses();
+			makeColumnsAssigment();
+		}
+	}
+	catch (std::bad_alloc& _exBadAll) {
+		cout << "One of board allocation failed.  " << _exBadAll.what() << " occured\n";
+	}
+
+	return *this;
 }
